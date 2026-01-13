@@ -12,6 +12,7 @@ export interface GameState {
   lastActiveDate: string
   streak: number
   showLevelUpModal?: boolean
+  excitedUntil?: number
 }
 
 // XP thresholds for leveling up

@@ -1,6 +1,7 @@
 import { computed } from 'vue'
 import { useWalletStore } from '@/stores/wallet'
 import { useGameStore } from '@/stores/game'
+import { toast } from 'vue-sonner'
 
 /**
  * Composable for wallet/budget logic
@@ -19,7 +20,6 @@ export function useWallet() {
       maximumFractionDigits: 0,
     }).format(amount)
   }
-
   // Suggested allocations based on total budget
   function getSuggestedAllocations(total: number) {
     return {
@@ -55,11 +55,17 @@ export function useWallet() {
       const coinsEarned = Math.floor(remaining / 10000)
       if (coinsEarned > 0) {
         gameStore.addCoins(coinsEarned)
+        toast.success(`Tabungan berhasil! +${coinsEarned} Koin`, {
+          description: 'Alhamdulillah, tabunganmu bertambah!'
+        })
+      } else {
+        toast.success('Tabungan berhasil disimpan!')
       }
       return coinsEarned
     }
     return 0
   }
+
 
   // Get denomination breakdown
   const denominationBreakdown = computed(() => 

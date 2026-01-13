@@ -24,6 +24,15 @@ const statusMessage = computed(() => {
   if (energy < 80) return 'Semangat!'
   return 'Penuh energi! 💪'
 })
+
+const moodAnimationClass = computed(() => {
+  switch (gameStore.state.mood) {
+    case 'excited': return 'animate-excited shadow-lg shadow-white/20'
+    case 'tired': return 'animate-tired grayscale-[0.2]'
+    case 'happy': return 'hover:scale-105'
+    default: return ''
+  }
+})
 </script>
 
 <template>
@@ -77,7 +86,10 @@ const statusMessage = computed(() => {
       </div>
 
       <!-- Character placeholder -->
-      <div class="w-24 h-24 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center text-4xl">
+      <div 
+        class="w-24 h-24 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center text-4xl transition-all duration-300"
+        :class="moodAnimationClass"
+      >
         {{ moodEmoji }}
       </div>
     </div>
@@ -88,5 +100,24 @@ const statusMessage = computed(() => {
 /* Override progress bar background for dark cards */
 :deep(.bg-secondary-100) {
   @apply bg-white/20;
+}
+
+.animate-excited {
+  animation: bounce 2s infinite;
+}
+
+.animate-tired {
+  animation: pulse-slow 3s infinite;
+  opacity: 0.8;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-5%); }
+  50% { transform: translateY(5%); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.8; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1); }
 }
 </style>
