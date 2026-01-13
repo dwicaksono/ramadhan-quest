@@ -86,6 +86,8 @@ export const useGameStore = defineStore('game', () => {
       state.value.level++
       state.value.mood = 'excited'
       state.value.showLevelUpModal = true
+      // Excited for 1 hour
+      state.value.excitedUntil = Date.now() + (60 * 60 * 1000)
     }
   }
 
@@ -94,6 +96,12 @@ export const useGameStore = defineStore('game', () => {
   }
 
   function updateMood() {
+    // If currently excited and time hasn't passed, don't change mood
+    if (state.value.excitedUntil && Date.now() < state.value.excitedUntil) {
+      state.value.mood = 'excited'
+      return
+    }
+
     if (state.value.energy < 20) {
       state.value.mood = 'tired'
     } else if (state.value.energy < 40) {
