@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useRecipeStore } from '@/stores/recipe'
 import { useGame } from '@/composables/useGame'
-import { BaseCard, BaseButton } from '@/components/base'
+import { BaseCard } from '@/components/base'
+import RecipeDetail from '@/components/kitchen/RecipeDetail.vue'
+import type { Recipe } from '@/types/recipe'
 
 const recipeStore = useRecipeStore()
 const { completeCooking } = useGame()
@@ -10,9 +12,28 @@ const { completeCooking } = useGame()
 const recipes = computed(() => recipeStore.filteredRecipes)
 const filters = computed(() => recipeStore.filters)
 
-function handleCook() {
+// Detail Modal State
+const showDetail = ref(false)
+const activeRecipe = ref<Recipe | null>(null)
+
+function openRecipe(recipe: Recipe) {
+  activeRecipe.value = recipe
+  showDetail.value = true
+}
+
+function closeRecipe() {
+  showDetail.value = false
+  setTimeout(() => {
+    activeRecipe.value = null
+  }, 300) // Clear after transition
+}
+
+function handleFinishCooking() {
   const result = completeCooking()
   console.log('Cooked!', result)
+  closeRecipe()
+  // Ensure we can see the toast/feedback by delaying page nav if needed
+  // For now just close modal
 }
 </script>
 
@@ -57,39 +78,53 @@ function handleCook() {
       </button>
     </div>
 
-    <!-- Recipe list -->
-    <div class="space-y-4">
+    <!-- Recipe Grid -->
+    <div class="grid grid-cols-2 gap-4 pb-24">
       <BaseCard
-        v-for="recipe in recipes.slice(0, 10)"
+        v-for="recipe in recipes"
         :key="recipe.id"
-        class="cursor-pointer hover:shadow-md transition-shadow"
+        class="!p-0 overflow-hidden cursor-pointer hover:shadow-lg transition-all active:scale-95 group relative"
+        @click="openRecipe(recipe)"
       >
-        <div class="flex items-start justify-between">
-          <div class="flex-1">
-            <h3 class="font-semibold text-secondary-900">{{ recipe.name }}</h3>
-            <div class="flex items-center gap-2 mt-1">
-              <span class="text-xs bg-secondary-100 text-secondary-600 px-2 py-0.5 rounded-full">
-                ⏱️ {{ recipe.time }} menit
-              </span>
-              <span class="text-xs bg-secondary-100 text-secondary-600 px-2 py-0.5 rounded-full">
-                {{ recipe.difficulty }}
-              </span>
-            </div>
-            <div class="flex flex-wrap gap-1 mt-2">
-              <span
-                v-for="tag in recipe.tags.slice(0, 3)"
-                :key="tag"
-                class="text-xs text-primary-600 bg-primary-50 px-2 py-0.5 rounded-full"
-              >
-                #{{ tag }}
-              </span>
-            </div>
+        <!-- Image Cover -->
+        <div class="aspect-square relative">
+          <img 
+            :src="recipe.imageUrl" 
+            :alt="recipe.name"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          
+          <!-- Difficulty Badge -->
+          <span class="absolute top-2 right-2 text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/90 text-stone-700 shadow-sm">
+            {{ recipe.difficulty }}
+          </span>
+        </div>
+
+        <!-- Content -->
+        <div class="p-3">
+          <h3 class="font-bold text-sm text-secondary-900 leading-tight line-clamp-2 mb-1">
+            {{ recipe.name }}
+          </h3>
+          <div class="flex items-center gap-2 text-xs text-secondary-500">
+            <span class="flex items-center gap-1">
+              ⏲️ {{ recipe.time }}m
+            </span>
+            <span v-if="recipe.tags[0]" class="text-primary-600 font-medium">
+              #{{ recipe.tags[0] }}
+            </span>
           </div>
-          <BaseButton size="sm" @click="handleCook">
-            Masak
-          </BaseButton>
         </div>
       </BaseCard>
     </div>
+
+    <!-- Detail Modal -->
+    <RecipeDetail 
+      :is-open="showDetail"
+      :recipe="activeRecipe"
+      @close="closeRecipe"
+      @cook="handleFinishCooking"
+    />
   </div>
 </template>

@@ -15,6 +15,7 @@ function getDefaultState(): GameState {
     userName: '',
     lastActiveDate: new Date().toISOString().split('T')[0],
     streak: 0,
+    showLevelUpModal: false,
   }
 }
 
@@ -84,7 +85,12 @@ export const useGameStore = defineStore('game', () => {
     if (nextThreshold && state.value.xp >= nextThreshold) {
       state.value.level++
       state.value.mood = 'excited'
+      state.value.showLevelUpModal = true
     }
+  }
+
+  function closeLevelUpModal() {
+    state.value.showLevelUpModal = false
   }
 
   function updateMood() {
@@ -145,5 +151,6 @@ export const useGameStore = defineStore('game', () => {
     setMood,
     checkDailyLogin,
     reset,
+    closeLevelUpModal,
   }
 })

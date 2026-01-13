@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { useHabitStore } from '@/stores/habit'
 import { useGame } from '@/composables/useGame'
 import { BaseCard, BaseCheckbox } from '@/components/base'
 
+const router = useRouter()
 const habitStore = useHabitStore()
 const { completeHabit } = useGame()
 
@@ -11,6 +13,10 @@ const displayedHabits = computed(() => habitStore.todaysHabits.slice(0, 3))
 
 function toggleHabit(habitId: string) {
   completeHabit(habitId)
+}
+
+function navigateToHabits() {
+  router.push('/habits')
 }
 </script>
 
@@ -37,7 +43,10 @@ function toggleHabit(habitId: string) {
           :description="habit.category === 'spiritual' ? '📿 Spiritual' : '💝 Community'"
           @update:model-value="toggleHabit(habit.id)"
         />
-        <button class="text-secondary-300 hover:text-secondary-500 p-1">
+        <button 
+          class="text-secondary-300 hover:text-secondary-500 p-1"
+          @click="navigateToHabits"
+        >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
@@ -46,7 +55,10 @@ function toggleHabit(habitId: string) {
     </div>
 
     <!-- View all button -->
-    <button class="w-full text-center text-sm text-primary-600 font-medium py-2 hover:text-primary-700">
+    <button 
+      class="w-full text-center text-sm text-primary-600 font-medium py-2 hover:text-primary-700"
+      @click="navigateToHabits"
+    >
       View All Quests →
     </button>
   </BaseCard>

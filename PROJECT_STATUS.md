@@ -34,22 +34,22 @@ We have successfully initialized the **Ramadan Quest PWA**, a gamified companion
 The focus for the upcoming week is to deepen the mechanics and interactions.
 
 ### 1. Habit Tracker (Deep Dive)
-*   [ ] Expand the Home widget into a full **Habit Page**.
-*   [ ] Add categories: Spiritual (Sholat, Tilawah) vs Social (Sedekah).
-*   [ ] Implement **XP Reward Animations** when checking off habits.
+*   [x] Expand the Home widget into a full **Habit Page**.
+*   [x] Add categories: Spiritual (Sholat, Tilawah) vs Social (Sedekah).
+*   [x] Implement **XP Reward Animations** when checking off habits.
 
 ### 2. Kitchen & Cooking Mechanism
-*   [ ] Connect "Masak" (Cook) button to Game State (Restore Energy/Mood).
-*   [ ] Create a **Recipe Detail Modal** showing ingredients and steps.
-*   [ ] *Monetization Logic:* Add "Beli Bahan" button (Affiliate link placeholder).
+*   [x] Connect "Masak" (Cook) button to Game State (Restore Energy/Mood).
+*   [x] Create a **Recipe Detail Modal** showing ingredients and steps.
+*   [x] *Monetization Logic:* Add "Beli Bahan" button (Affiliate link placeholder).
 
 ### 3. Wallet & THR Manager
-*   [ ] Implement **"Pecahan Uang" (Money Breaker)** logic to help users organize physical cash.
-*   [ ] Add "Tabung" feature: Converting budget savings into Game Coins.
+*   [x] Implement **"Pecahan Uang" (Money Breaker)** logic to help users organize physical cash.
+*   [x] Add "Tabung" feature: Converting budget savings into Game Coins.
 
 ### 4. Game Integration
-*   [ ] **Level Up System:** Visual feedback when XP threshold is reached.
-*   [ ] **Streak System:** Logic to reset streak if user is inactive.
+*   [x] **Level Up System:** Visual feedback when XP threshold is reached.
+*   [x] **Streak System:** Logic to reset streak if user is inactive.
 *   [ ] **Character States:** Dynamic emoji changes based on Energy/Mood (Sleepy, Happy, Energetic).
 
 ---

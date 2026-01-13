@@ -10,6 +10,7 @@ export interface Recipe {
   id: number
   name: string
   category: 'sahur' | 'buka'
+  imageUrl: string
   time: number
   difficulty: 'Easy' | 'Medium' | 'Hard'
   tags: string[]

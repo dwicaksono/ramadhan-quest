@@ -1,5 +1,6 @@
 import { computed } from 'vue'
 import { useWalletStore } from '@/stores/wallet'
+import { useGameStore } from '@/stores/game'
 
 /**
  * Composable for wallet/budget logic
@@ -7,6 +8,7 @@ import { useWalletStore } from '@/stores/wallet'
  */
 export function useWallet() {
   const walletStore = useWalletStore()
+  const gameStore = useGameStore()
 
   // Format currency
   function formatCurrency(amount: number): string {
@@ -39,6 +41,26 @@ export function useWallet() {
     })
   }
 
+  // Commit remaining budget to savings and earn coins
+  function commitSavings(): number {
+    const remaining = walletStore.remainingBudget
+    if (remaining <= 0) return 0
+
+    const savingsAlloc = walletStore.allocations.find(a => a.id === 'savings')
+    if (savingsAlloc) {
+      // Update savings allocation
+      walletStore.updateAllocation('savings', savingsAlloc.amount + remaining)
+      
+      // Calculate reward (1 coin per 10k)
+      const coinsEarned = Math.floor(remaining / 10000)
+      if (coinsEarned > 0) {
+        gameStore.addCoins(coinsEarned)
+      }
+      return coinsEarned
+    }
+    return 0
+  }
+
   // Get denomination breakdown
   const denominationBreakdown = computed(() => 
     walletStore.getDenominations(walletStore.remainingBudget)
@@ -60,6 +82,7 @@ export function useWallet() {
     formatCurrency,
     getSuggestedAllocations,
     applySuggested,
+    commitSavings,
     // Computed
     denominationBreakdown,
     budgetHealth,

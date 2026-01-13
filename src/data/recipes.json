@@ -2,15 +2,35 @@
   {
     "id": 1,
     "name": "Tumis Sarden Pedas Kilat",
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Tumis",
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["sarden", "ikan"],
+    "tags": [
+      "sarden",
+      "ikan"
+    ],
     "ingredients": [
-      { "item": "Sarden Kaleng (kecil/besar)", "qty": "1 kaleng", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Merah & Putih (iris)", "qty": "3 siung", "affiliateUrl": null },
-      { "item": "Cabai Rawit (iris)", "qty": "5 buah", "affiliateUrl": null },
-      { "item": "Minyak Goreng", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Sarden Kaleng (kecil/besar)",
+        "qty": "1 kaleng",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Merah & Putih (iris)",
+        "qty": "3 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Cabai Rawit (iris)",
+        "qty": "5 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Minyak Goreng",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang dan cabai hingga harum.",
@@ -25,20 +45,44 @@
     "category": "sahur",
     "time": 12,
     "difficulty": "Medium",
-    "tags": ["telur", "daun bawang"],
+    "tags": [
+      "telur",
+      "daun bawang"
+    ],
     "ingredients": [
-      { "item": "Telur Ayam", "qty": "3 butir", "affiliateUrl": null },
-      { "item": "Tepung Beras", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Daun Bawang (iris halus)", "qty": "2 batang", "affiliateUrl": null },
-      { "item": "Cabai Giling/Halus", "qty": "1 sdm", "affiliateUrl": null },
-      { "item": "Minyak Goreng", "qty": "banyak", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Telur Ayam",
+        "qty": "3 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Tepung Beras",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Daun Bawang (iris halus)",
+        "qty": "2 batang",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Cabai Giling/Halus",
+        "qty": "1 sdm",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Minyak Goreng",
+        "qty": "banyak",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Kocok lepas telur, masukkan tepung beras, cabai giling, garam, dan daun bawang.",
       "Panaskan minyak yang agak banyak di wajan.",
       "Tuang telur, masak dengan api sedang hingga mengembang dan pinggirannya krispi.",
       "Balik telur, masak hingga matang sempurna, angkat dan tiriskan."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/purple/white?text=Telur"
   },
   {
     "id": 3,
@@ -46,19 +90,39 @@
     "category": "sahur",
     "time": 8,
     "difficulty": "Easy",
-    "tags": ["kangkung", "sayur"],
+    "tags": [
+      "kangkung",
+      "sayur"
+    ],
     "ingredients": [
-      { "item": "Kangkung (siangi)", "qty": "1 ikat", "affiliateUrl": null },
-      { "item": "Saus Tiram", "qty": "2 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Putih (geprek)", "qty": "3 siung", "affiliateUrl": null },
-      { "item": "Cabai Merah", "qty": "2 buah", "affiliateUrl": null }
+      {
+        "item": "Kangkung (siangi)",
+        "qty": "1 ikat",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Saus Tiram",
+        "qty": "2 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Putih (geprek)",
+        "qty": "3 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Cabai Merah",
+        "qty": "2 buah",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Tumis bawang putih dan cabai hingga layu.",
       "Masukkan kangkung, besarkan api agar warna tetap hijau.",
       "Tuang saus tiram dan sedikit air, aduk cepat.",
       "Masak 2 menit saja sampai layu, angkat."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Cah"
   },
   {
     "id": 4,
@@ -66,19 +130,39 @@
     "category": "sahur",
     "time": 7,
     "difficulty": "Easy",
-    "tags": ["kornet", "daging"],
+    "tags": [
+      "kornet",
+      "daging"
+    ],
     "ingredients": [
-      { "item": "Kornet Sapi", "qty": "1 kaleng kecil", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Bombay (iris)", "qty": "1/2 buah", "affiliateUrl": null },
-      { "item": "Margarin", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Telur (opsional)", "qty": "1 butir", "affiliateUrl": null }
+      {
+        "item": "Kornet Sapi",
+        "qty": "1 kaleng kecil",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Bombay (iris)",
+        "qty": "1/2 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Margarin",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Telur (opsional)",
+        "qty": "1 butir",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Lelehkan margarin, tumis bawang bombay sampai wangi.",
       "Masukkan kornet, tekan-tekan agar menyebar dan agak garing.",
       "Jika pakai telur, masukkan di pinggir wajan dan orak-arik campur dengan kornet.",
       "Beri sedikit lada bubuk, sajikan."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/orange/white?text=Kornet"
   },
   {
     "id": 5,
@@ -86,19 +170,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["mie instan", "telur"],
+    "tags": [
+      "mie instan",
+      "telur"
+    ],
     "ingredients": [
-      { "item": "Mie Instan Goreng", "qty": "1 bungkus", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Telur Ayam", "qty": "2 butir", "affiliateUrl": null },
-      { "item": "Daun Bawang", "qty": "1 batang", "affiliateUrl": null },
-      { "item": "Minyak Goreng", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Mie Instan Goreng",
+        "qty": "1 bungkus",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Telur Ayam",
+        "qty": "2 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Daun Bawang",
+        "qty": "1 batang",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Minyak Goreng",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Rebus mie setengah matang, tiriskan.",
       "Campur mie, bumbu instan, telur, dan daun bawang dalam mangkuk.",
       "Panaskan sedikit minyak di teflon.",
       "Goreng adonan hingga kecokelatan di kedua sisi."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Martabak"
   },
   {
     "id": 6,
@@ -106,19 +210,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["buncis", "telur"],
+    "tags": [
+      "buncis",
+      "telur"
+    ],
     "ingredients": [
-      { "item": "Buncis (iris serong tipis)", "qty": "100 gr", "affiliateUrl": null },
-      { "item": "Telur", "qty": "2 butir", "affiliateUrl": null },
-      { "item": "Bawang Putih (cincang)", "qty": "2 siung", "affiliateUrl": null },
-      { "item": "Kaldu Jamur", "qty": "1 sdt", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Buncis (iris serong tipis)",
+        "qty": "100 gr",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Telur",
+        "qty": "2 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Putih (cincang)",
+        "qty": "2 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Kaldu Jamur",
+        "qty": "1 sdt",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang putih sampai harum, sisihkan di pinggir wajan.",
       "Masukkan telur, buat orak-arik.",
       "Masukkan buncis, aduk rata dengan telur.",
       "Tambahkan kaldu jamur dan sedikit air, masak sampai buncis empuk tapi masih renyah."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Orak"
   },
   {
     "id": 7,
@@ -126,19 +250,38 @@
     "category": "sahur",
     "time": 8,
     "difficulty": "Easy",
-    "tags": ["sosis"],
+    "tags": [
+      "sosis"
+    ],
     "ingredients": [
-      { "item": "Sosis Sapi/Ayam (potong)", "qty": "5 buah", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Saus Tomat", "qty": "3 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Saus Sambal", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Bombay", "qty": "1/2 buah", "affiliateUrl": null }
+      {
+        "item": "Sosis Sapi/Ayam (potong)",
+        "qty": "5 buah",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Saus Tomat",
+        "qty": "3 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Saus Sambal",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Bombay",
+        "qty": "1/2 buah",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Kerat-kerat sosis, goreng sebentar sampai mekar.",
       "Tumis bawang bombay, masukkan sosis goreng.",
       "Tambahkan saus tomat, saus sambal, dan sedikit air.",
       "Masak hingga kuah mengental dan membalut sosis."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/purple/white?text=Sosis"
   },
   {
     "id": 8,
@@ -146,18 +289,33 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["tahu"],
+    "tags": [
+      "tahu"
+    ],
     "ingredients": [
-      { "item": "Tahu Putih/Kuning", "qty": "4 potong", "affiliateUrl": null },
-      { "item": "Bumbu Racik Tempe/Tahu", "qty": "1 bungkus", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Minyak Goreng", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Tahu Putih/Kuning",
+        "qty": "4 potong",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bumbu Racik Tempe/Tahu",
+        "qty": "1 bungkus",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Minyak Goreng",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Lumuri tahu dengan bumbu racik kering atau dikasih sedikit air.",
       "Diamkan 2-3 menit agar meresap.",
       "Goreng dalam minyak panas hingga berkulit atau kecokelatan.",
       "Angkat dan sajikan dengan kecap manis pedas."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/red/white?text=Tahu"
   },
   {
     "id": 9,
@@ -165,19 +323,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Medium",
-    "tags": ["tauge", "ikan asin"],
+    "tags": [
+      "tauge",
+      "ikan asin"
+    ],
     "ingredients": [
-      { "item": "Tauge", "qty": "100 gr", "affiliateUrl": null },
-      { "item": "Ikan Asin Jambal (potong dadu)", "qty": "1 potong", "affiliateUrl": null },
-      { "item": "Saus Tiram", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Daun Bawang", "qty": "1 batang", "affiliateUrl": null }
+      {
+        "item": "Tauge",
+        "qty": "100 gr",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Ikan Asin Jambal (potong dadu)",
+        "qty": "1 potong",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Saus Tiram",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Daun Bawang",
+        "qty": "1 batang",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Goreng potongan ikan asin sampai kering, sisihkan.",
       "Tumis bawang merah/putih iris di bekas minyak ikan asin.",
       "Masukkan tauge dan saus tiram, aduk cepat.",
       "Terakhir masukkan ikan asin goreng dan daun bawang, aduk sebentar, angkat."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/red/white?text=Tumis"
   },
   {
     "id": 10,
@@ -185,19 +363,38 @@
     "category": "sahur",
     "time": 5,
     "difficulty": "Easy",
-    "tags": ["telur"],
+    "tags": [
+      "telur"
+    ],
     "ingredients": [
-      { "item": "Telur", "qty": "2 butir", "affiliateUrl": null },
-      { "item": "Kecap Manis", "qty": "3 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Merah & Putih (iris)", "qty": "2 siung", "affiliateUrl": null },
-      { "item": "Lada Bubuk", "qty": "sejumput", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Telur",
+        "qty": "2 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Kecap Manis",
+        "qty": "3 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Merah & Putih (iris)",
+        "qty": "2 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Lada Bubuk",
+        "qty": "sejumput",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Goreng telur ceplok (mata sapi) matang/setengah matang sesuai selera, sisihkan.",
       "Tumis bawang iris sampai harum.",
       "Tuang kecap manis dan sedikit air, masak sampai mendidih.",
       "Masukkan telur ceplok, masak sebentar agar bumbu meresap."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/purple/white?text=Telur"
   },
   {
     "id": 11,
@@ -205,19 +402,39 @@
     "category": "sahur",
     "time": 12,
     "difficulty": "Medium",
-    "tags": ["jagung", "telur"],
+    "tags": [
+      "jagung",
+      "telur"
+    ],
     "ingredients": [
-      { "item": "Jagung Manis (pipil)", "qty": "1 buah", "affiliateUrl": null },
-      { "item": "Telur (kocok lepas)", "qty": "1 butir", "affiliateUrl": null },
-      { "item": "Tepung Maizena (larutkan)", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Minyak Wijen", "qty": "1 sdt", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Jagung Manis (pipil)",
+        "qty": "1 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Telur (kocok lepas)",
+        "qty": "1 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Tepung Maizena (larutkan)",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Minyak Wijen",
+        "qty": "1 sdt",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Rebus jagung pipil dengan air secukupnya sampai matang.",
       "Bumbui dengan garam, lada, dan penyedap.",
       "Tuang larutan maizena sampai kuah mengental.",
       "Tuang telur kocok sedikit demi sedikit sambil diaduk memutar (serabut). Beri minyak wijen."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/orange/white?text=Sup"
   },
   {
     "id": 12,
@@ -225,19 +442,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["nasi", "teri"],
+    "tags": [
+      "nasi",
+      "teri"
+    ],
     "ingredients": [
-      { "item": "Nasi Putih Dingin", "qty": "1 piring", "affiliateUrl": null },
-      { "item": "Teri Medan (goreng)", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Merah & Putih (halus/iris)", "qty": "3 siung", "affiliateUrl": null },
-      { "item": "Kecap Manis", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Nasi Putih Dingin",
+        "qty": "1 piring",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Teri Medan (goreng)",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Merah & Putih (halus/iris)",
+        "qty": "3 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Kecap Manis",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang sampai harum.",
       "Masukkan nasi putih, aduk rata.",
       "Tambahkan sedikit kecap manis (sedikit saja biar warna tetap pucat) dan garam.",
       "Masukkan teri goreng, aduk rata sampai nasi berasap."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/purple/white?text=Nasi"
   },
   {
     "id": 13,
@@ -245,19 +482,39 @@
     "category": "sahur",
     "time": 8,
     "difficulty": "Easy",
-    "tags": ["sawi putih", "bakso"],
+    "tags": [
+      "sawi putih",
+      "bakso"
+    ],
     "ingredients": [
-      { "item": "Sawi Putih (potong)", "qty": "1 bonggol kecil", "affiliateUrl": null },
-      { "item": "Bakso Sapi (iris)", "qty": "5 butir", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Putih (cincang)", "qty": "2 siung", "affiliateUrl": null },
-      { "item": "Minyak Ikan", "qty": "1 sdt", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Sawi Putih (potong)",
+        "qty": "1 bonggol kecil",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bakso Sapi (iris)",
+        "qty": "5 butir",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Putih (cincang)",
+        "qty": "2 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Minyak Ikan",
+        "qty": "1 sdt",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang putih sampai kekuningan.",
       "Masukkan bakso, tumis sebentar.",
       "Masukkan batang sawi putih (bagian keras) dulu, beri air sedikit.",
       "Masukkan daun sawi dan minyak ikan, masak sampai layu."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/orange/white?text=Ca"
   },
   {
     "id": 14,
@@ -265,19 +522,38 @@
     "category": "sahur",
     "time": 15,
     "difficulty": "Medium",
-    "tags": ["tempe"],
+    "tags": [
+      "tempe"
+    ],
     "ingredients": [
-      { "item": "Tempe (potong dadu)", "qty": "1 papan", "affiliateUrl": null },
-      { "item": "Kecap Manis", "qty": "4 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Lengkuas & Daun Salam", "qty": "secukupnya", "affiliateUrl": null },
-      { "item": "Gula Merah", "qty": "sedikit", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Tempe (potong dadu)",
+        "qty": "1 papan",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Kecap Manis",
+        "qty": "4 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Lengkuas & Daun Salam",
+        "qty": "secukupnya",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Gula Merah",
+        "qty": "sedikit",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Goreng tempe setengah matang, angkat.",
       "Tumis bawang merah/putih, salam, dan lengkuas.",
       "Masukkan tempe, kecap manis, gula merah, dan sedikit air.",
       "Masak hingga air menyusut dan bumbu meresap."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/red/white?text=Tempe"
   },
   {
     "id": 15,
@@ -285,18 +561,38 @@
     "category": "sahur",
     "time": 5,
     "difficulty": "Easy",
-    "tags": ["telur", "abon"],
+    "tags": [
+      "telur",
+      "abon"
+    ],
     "ingredients": [
-      { "item": "Telur", "qty": "2 butir", "affiliateUrl": null },
-      { "item": "Susu UHT (opsional)", "qty": "2 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Abon Sapi", "qty": "2 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Margarin", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Telur",
+        "qty": "2 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Susu UHT (opsional)",
+        "qty": "2 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Abon Sapi",
+        "qty": "2 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Margarin",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Kocok telur dengan susu dan sedikit garam.",
       "Panaskan margarin, masukkan telur, buat orak-arik lembut (creamy).",
       "Sajikan di piring, taburi abon sapi di atasnya."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Abon"
   },
   {
     "id": 16,
@@ -304,19 +600,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["bayam", "jagung"],
+    "tags": [
+      "bayam",
+      "jagung"
+    ],
     "ingredients": [
-      { "item": "Bayam (siangi)", "qty": "1 ikat", "affiliateUrl": null },
-      { "item": "Jagung Manis (potong/pipil)", "qty": "1/2 bonggol", "affiliateUrl": null },
-      { "item": "Temu Kunci (geprek)", "qty": "1 ruas", "affiliateUrl": null },
-      { "item": "Bawang Merah (iris)", "qty": "3 siung", "affiliateUrl": null }
+      {
+        "item": "Bayam (siangi)",
+        "qty": "1 ikat",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Jagung Manis (potong/pipil)",
+        "qty": "1/2 bonggol",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Temu Kunci (geprek)",
+        "qty": "1 ruas",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Merah (iris)",
+        "qty": "3 siung",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Didihkan air, masukkan bawang merah dan temu kunci.",
       "Masukkan jagung, masak hingga matang.",
       "Masukkan bayam, tambahkan gula dan garam.",
       "Matikan api segera setelah bayam layu agar tetap hijau."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/red/white?text=Sayur"
   },
   {
     "id": 17,
@@ -324,19 +640,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Medium",
-    "tags": ["nugget", "sambal"],
+    "tags": [
+      "nugget",
+      "sambal"
+    ],
     "ingredients": [
-      { "item": "Nugget Ayam", "qty": "6 buah", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Cabai Rawit Merah", "qty": "10 buah", "affiliateUrl": null },
-      { "item": "Bawang Putih", "qty": "1 siung", "affiliateUrl": null },
-      { "item": "Minyak Panas", "qty": "2 sdm", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Nugget Ayam",
+        "qty": "6 buah",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Cabai Rawit Merah",
+        "qty": "10 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Putih",
+        "qty": "1 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Minyak Panas",
+        "qty": "2 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Goreng nugget hingga kering keemasan, tiriskan.",
       "Ulek kasar cabai rawit, bawang putih, dan garam.",
       "Siram sambal dengan minyak panas bekas goreng nugget.",
       "Penyet/geprek nugget di atas sambal."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/red/white?text=Nugget"
   },
   {
     "id": 18,
@@ -344,19 +680,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["jamur", "sayur"],
+    "tags": [
+      "jamur",
+      "sayur"
+    ],
     "ingredients": [
-      { "item": "Jamur Tiram (suwir)", "qty": "200 gr", "affiliateUrl": null },
-      { "item": "Bawang Putih & Merah", "qty": "3 siung", "affiliateUrl": null },
-      { "item": "Cabai Hijau", "qty": "2 buah", "affiliateUrl": null },
-      { "item": "Kaldu Bubuk", "qty": "1 sdt", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Jamur Tiram (suwir)",
+        "qty": "200 gr",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Putih & Merah",
+        "qty": "3 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Cabai Hijau",
+        "qty": "2 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Kaldu Bubuk",
+        "qty": "1 sdt",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang dan cabai hijau hingga harum.",
       "Masukkan jamur tiram yang sudah dicuci dan diperas airnya (penting agar tidak lembek).",
       "Beri kaldu bubuk dan sedikit lada.",
       "Masak cepat dengan api besar."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Tumis"
   },
   {
     "id": 19,
@@ -364,19 +720,39 @@
     "category": "sahur",
     "time": 15,
     "difficulty": "Medium",
-    "tags": ["sayuran", "ayam"],
+    "tags": [
+      "sayuran",
+      "ayam"
+    ],
     "ingredients": [
-      { "item": "Wortel (iris tipis)", "qty": "1 buah", "affiliateUrl": null },
-      { "item": "Sawi Hijau & Putih", "qty": "secukupnya", "affiliateUrl": null },
-      { "item": "Dada Ayam (iris tipis)", "qty": "50 gr", "affiliateUrl": null },
-      { "item": "Saus Tiram", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Wortel (iris tipis)",
+        "qty": "1 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Sawi Hijau & Putih",
+        "qty": "secukupnya",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Dada Ayam (iris tipis)",
+        "qty": "50 gr",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Saus Tiram",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang putih, masukkan ayam hingga berubah warna.",
       "Masukkan wortel dan sedikit air, masak sampai setengah empuk.",
       "Masukkan sisa sayuran dan saus tiram.",
       "Kentalkan kuah dengan sedikit larutan maizena jika suka."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Capcay"
   },
   {
     "id": 20,
@@ -384,19 +760,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["bihun", "telur"],
+    "tags": [
+      "bihun",
+      "telur"
+    ],
     "ingredients": [
-      { "item": "Bihun Jagung (rendam air panas)", "qty": "1 keping", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Telur", "qty": "1 butir", "affiliateUrl": null },
-      { "item": "Bawang Putih (halus)", "qty": "2 siung", "affiliateUrl": null },
-      { "item": "Kecap Asin", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Bihun Jagung (rendam air panas)",
+        "qty": "1 keping",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Telur",
+        "qty": "1 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Putih (halus)",
+        "qty": "2 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Kecap Asin",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang putih, masukkan telur, buat orak-arik.",
       "Masukkan bihun yang sudah lunak.",
       "Bumbui dengan kecap asin, garam, lada, dan penyedap.",
       "Aduk rata, tambahkan seledri jika ada."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Bihun"
   },
   {
     "id": 21,
@@ -404,18 +800,34 @@
     "category": "sahur",
     "time": 12,
     "difficulty": "Easy",
-    "tags": ["telur", "sambal"],
+    "tags": [
+      "telur",
+      "sambal"
+    ],
     "ingredients": [
-      { "item": "Telur Ayam", "qty": "3 butir", "affiliateUrl": null },
-      { "item": "Sambal Terasi Instan", "qty": "1 sachet", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Kemangi (opsional)", "qty": "secukupnya", "affiliateUrl": null }
+      {
+        "item": "Telur Ayam",
+        "qty": "3 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Sambal Terasi Instan",
+        "qty": "1 sachet",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Kemangi (opsional)",
+        "qty": "secukupnya",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Rebus telur hingga matang (sekitar 10 menit), kupas.",
       "Goreng telur sebentar dalam minyak panas agar berkulit (opsional).",
       "Tuang sambal terasi di cobek atau piring.",
       "Penyet telur di atas sambal."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/blue/white?text=Telur"
   },
   {
     "id": 22,
@@ -423,19 +835,39 @@
     "category": "sahur",
     "time": 8,
     "difficulty": "Easy",
-    "tags": ["telur", "tomat"],
+    "tags": [
+      "telur",
+      "tomat"
+    ],
     "ingredients": [
-      { "item": "Tomat Merah (potong dadu)", "qty": "2 buah", "affiliateUrl": null },
-      { "item": "Telur (kocok)", "qty": "2 butir", "affiliateUrl": null },
-      { "item": "Bawang Putih", "qty": "2 siung", "affiliateUrl": null },
-      { "item": "Minyak Wijen", "qty": "sedikit", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Tomat Merah (potong dadu)",
+        "qty": "2 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Telur (kocok)",
+        "qty": "2 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Putih",
+        "qty": "2 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Minyak Wijen",
+        "qty": "sedikit",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang putih dan tomat sampai tomat hancur/lembek.",
       "Tuang air secukupnya, biarkan mendidih.",
       "Tuang telur kocok perlahan sambil diaduk.",
       "Beri garam, lada, daun bawang, dan minyak wijen."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/orange/white?text=Sup"
   },
   {
     "id": 23,
@@ -443,19 +875,38 @@
     "category": "sahur",
     "time": 12,
     "difficulty": "Easy",
-    "tags": ["labu siam"],
+    "tags": [
+      "labu siam"
+    ],
     "ingredients": [
-      { "item": "Labu Siam (iris korek api)", "qty": "1 buah", "affiliateUrl": null },
-      { "item": "Bawang Merah & Putih", "qty": "3 siung", "affiliateUrl": null },
-      { "item": "Cabai Merah", "qty": "2 buah", "affiliateUrl": null },
-      { "item": "Udang Rebon/Ebi (opsional)", "qty": "1 sdt", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Labu Siam (iris korek api)",
+        "qty": "1 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Merah & Putih",
+        "qty": "3 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Cabai Merah",
+        "qty": "2 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Udang Rebon/Ebi (opsional)",
+        "qty": "1 sdt",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Remas labu siam irisan dengan garam agar lemas, cuci bersih.",
       "Tumis bawang dan udang rebon sampai wangi.",
       "Masukkan labu siam dan cabai.",
       "Masak dengan sedikit air sampai matang."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/orange/white?text=Tumis"
   },
   {
     "id": 24,
@@ -463,17 +914,32 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["ayam"],
+    "tags": [
+      "ayam"
+    ],
     "ingredients": [
-      { "item": "Ayam Ungkep (stok)", "qty": "2 potong", "affiliateUrl": null },
-      { "item": "Minyak Goreng", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Sambal Botolan", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Ayam Ungkep (stok)",
+        "qty": "2 potong",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Minyak Goreng",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Sambal Botolan",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Keluarkan ayam ungkep dari kulkas (thawing sebentar atau microwave).",
       "Panaskan minyak, goreng ayam hingga kecokelatan.",
       "Angkat dan sajikan dengan sambal botolan."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Ayam"
   },
   {
     "id": 25,
@@ -481,18 +947,38 @@
     "category": "sahur",
     "time": 7,
     "difficulty": "Easy",
-    "tags": ["pakcoy", "sayur"],
+    "tags": [
+      "pakcoy",
+      "sayur"
+    ],
     "ingredients": [
-      { "item": "Pakcoy (belah bonggol)", "qty": "4 bonggol", "affiliateUrl": null },
-      { "item": "Bawang Putih (cincang halus)", "qty": "4 siung", "affiliateUrl": null },
-      { "item": "Saus Tiram", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Minyak Goreng", "qty": "2 sdm", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Pakcoy (belah bonggol)",
+        "qty": "4 bonggol",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Putih (cincang halus)",
+        "qty": "4 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Saus Tiram",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Minyak Goreng",
+        "qty": "2 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Rebus pakcoy di air mendidih 1 menit (tambah minyak sedikit di air), tiriskan.",
       "Tumis bawang putih cincang hingga keemasan dan krispi.",
       "Siram minyak bawang dan saus tiram di atas rebusan pakcoy."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Tumis"
   },
   {
     "id": 26,
@@ -500,19 +986,39 @@
     "category": "sahur",
     "time": 8,
     "difficulty": "Easy",
-    "tags": ["roti", "telur"],
+    "tags": [
+      "roti",
+      "telur"
+    ],
     "ingredients": [
-      { "item": "Roti Tawar", "qty": "2 lembar", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Telur", "qty": "2 butir", "affiliateUrl": null },
-      { "item": "Keju Slice", "qty": "1 lembar", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Saus Sambal/Tomat", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Roti Tawar",
+        "qty": "2 lembar",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Telur",
+        "qty": "2 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Keju Slice",
+        "qty": "1 lembar",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Saus Sambal/Tomat",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Kocok telur, tuang ke teflon panas.",
       "Taruh 2 lembar roti di atas telur sebelum matang, balikkan semuanya.",
       "Lipat sisi telur yang berlebih ke dalam roti.",
       "Beri keju dan saus, lipat roti jadi satu (sandwich), panggang sebentar."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Sandwich"
   },
   {
     "id": 27,
@@ -520,19 +1026,40 @@
     "category": "sahur",
     "time": 12,
     "difficulty": "Medium",
-    "tags": ["nasi", "sosis", "bakso"],
+    "tags": [
+      "nasi",
+      "sosis",
+      "bakso"
+    ],
     "ingredients": [
-      { "item": "Sosis & Bakso (iris)", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Telur", "qty": "1 butir", "affiliateUrl": null },
-      { "item": "Sawi Hijau", "qty": "1 batang", "affiliateUrl": null },
-      { "item": "Kecap Manis & Saus Sambal", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Sosis & Bakso (iris)",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Telur",
+        "qty": "1 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Sawi Hijau",
+        "qty": "1 batang",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Kecap Manis & Saus Sambal",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang putih, masukkan telur orak-arik.",
       "Masukkan sosis, bakso, dan sawi.",
       "Beri sedikit air, kecap manis, saus sambal, lada, dan garam.",
       "Masak hingga kuah nyemek (sedikit), sajikan di atas nasi hangat."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/orange/white?text=Nasi"
   },
   {
     "id": 28,
@@ -540,17 +1067,33 @@
     "category": "sahur",
     "time": 8,
     "difficulty": "Easy",
-    "tags": ["otak-otak", "frozen food"],
+    "tags": [
+      "otak-otak",
+      "frozen food"
+    ],
     "ingredients": [
-      { "item": "Otak-otak Ikan Frozen", "qty": "1 bungkus", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Minyak Goreng", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Saus Kacang/Sambal", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Otak-otak Ikan Frozen",
+        "qty": "1 bungkus",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Minyak Goreng",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Saus Kacang/Sambal",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Panaskan minyak.",
       "Goreng otak-otak hingga mengembang dan kecokelatan.",
       "Angkat, sajikan dengan cocolan saus favorit."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/purple/white?text=Otak-otak"
   },
   {
     "id": 29,
@@ -558,19 +1101,39 @@
     "category": "sahur",
     "time": 15,
     "difficulty": "Easy",
-    "tags": ["sop", "sosis"],
+    "tags": [
+      "sop",
+      "sosis"
+    ],
     "ingredients": [
-      { "item": "Sosis Sapi", "qty": "3 buah", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Sayuran Beku (mix vegetables)", "qty": "100 gr", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bumbu Sop Instan", "qty": "1/2 bungkus", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Daun Seledri", "qty": "1 batang", "affiliateUrl": null }
+      {
+        "item": "Sosis Sapi",
+        "qty": "3 buah",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Sayuran Beku (mix vegetables)",
+        "qty": "100 gr",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bumbu Sop Instan",
+        "qty": "1/2 bungkus",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Daun Seledri",
+        "qty": "1 batang",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Didihkan air, masukkan bumbu sop instan.",
       "Masukkan sayuran beku dan potongan sosis.",
       "Masak hingga mendidih kembali dan sosis matang.",
       "Taburi daun seledri, sajikan."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Sop"
   },
   {
     "id": 30,
@@ -578,19 +1141,38 @@
     "category": "sahur",
     "time": 12,
     "difficulty": "Medium",
-    "tags": ["cumi asin"],
+    "tags": [
+      "cumi asin"
+    ],
     "ingredients": [
-      { "item": "Cumi Asin (rendam air panas)", "qty": "100 gr", "affiliateUrl": null },
-      { "item": "Cabai Hijau Besar (iris serong)", "qty": "5 buah", "affiliateUrl": null },
-      { "item": "Tomat Hijau", "qty": "2 buah", "affiliateUrl": null },
-      { "item": "Bawang Merah", "qty": "4 siung", "affiliateUrl": null }
+      {
+        "item": "Cumi Asin (rendam air panas)",
+        "qty": "100 gr",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Cabai Hijau Besar (iris serong)",
+        "qty": "5 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Tomat Hijau",
+        "qty": "2 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Merah",
+        "qty": "4 siung",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Cuci bersih cumi asin yang sudah direndam.",
       "Tumis bawang merah dan cabai hijau sampai layu.",
       "Masukkan cumi dan tomat hijau.",
       "Masak sebentar, beri gula pasir (hati-hati garam karena cumi sudah asin)."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/purple/white?text=Cumi"
   },
   {
     "id": 31,
@@ -598,19 +1180,39 @@
     "category": "sahur",
     "time": 15,
     "difficulty": "Medium",
-    "tags": ["tahu", "salted egg"],
+    "tags": [
+      "tahu",
+      "salted egg"
+    ],
     "ingredients": [
-      { "item": "Tahu Putih (potong dadu)", "qty": "4 buah", "affiliateUrl": null },
-      { "item": "Tepung Bumbu Serbaguna", "qty": "1 bungkus", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bubuk Salted Egg Instan", "qty": "2 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Daun Kari (opsional)", "qty": "secukupnya", "affiliateUrl": null }
+      {
+        "item": "Tahu Putih (potong dadu)",
+        "qty": "4 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Tepung Bumbu Serbaguna",
+        "qty": "1 bungkus",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bubuk Salted Egg Instan",
+        "qty": "2 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Daun Kari (opsional)",
+        "qty": "secukupnya",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Balur tahu dengan tepung bumbu, goreng kering (crispy).",
       "Panaskan sedikit margarin, masukkan daun kari dan bubuk salted egg.",
       "Aduk sampai berbusa, masukkan tahu goreng.",
       "Aduk cepat sampai tahu terbalut rata."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/purple/white?text=Tahu"
   },
   {
     "id": 32,
@@ -618,19 +1220,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["oyong", "soun"],
+    "tags": [
+      "oyong",
+      "soun"
+    ],
     "ingredients": [
-      { "item": "Oyong (kupas, potong)", "qty": "1 buah", "affiliateUrl": null },
-      { "item": "Soun (rendam)", "qty": "1 bungkus kecil", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Putih", "qty": "2 siung", "affiliateUrl": null },
-      { "item": "Telur", "qty": "1 butir", "affiliateUrl": null }
+      {
+        "item": "Oyong (kupas, potong)",
+        "qty": "1 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Soun (rendam)",
+        "qty": "1 bungkus kecil",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Putih",
+        "qty": "2 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Telur",
+        "qty": "1 butir",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Tumis bawang putih, masukkan telur orak-arik.",
       "Masukkan oyong dan air secukupnya.",
       "Setelah oyong empuk, masukkan soun.",
       "Beri garam, lada, dan penyedap rasa."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Tumis"
   },
   {
     "id": 33,
@@ -638,19 +1260,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["sayur", "bumbu pecel"],
+    "tags": [
+      "sayur",
+      "bumbu pecel"
+    ],
     "ingredients": [
-      { "item": "Bayam/Kangkung", "qty": "1 ikat", "affiliateUrl": null },
-      { "item": "Tauge", "qty": "segenggam", "affiliateUrl": null },
-      { "item": "Bumbu Pecel Instan", "qty": "1 bungkus", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Kerupuk (pelengkap)", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Bayam/Kangkung",
+        "qty": "1 ikat",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Tauge",
+        "qty": "segenggam",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bumbu Pecel Instan",
+        "qty": "1 bungkus",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Kerupuk (pelengkap)",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Rebus sayuran sebentar saja, tiriskan.",
       "Seduh bumbu pecel dengan air panas hingga kental.",
       "Tata sayuran di piring, siram bumbu pecel.",
       "Sajikan dengan telur ceplok atau tempe goreng."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/red/white?text=Pecel"
   },
   {
     "id": 34,
@@ -658,18 +1300,38 @@
     "category": "sahur",
     "time": 5,
     "difficulty": "Easy",
-    "tags": ["oatmeal", "ayam"],
+    "tags": [
+      "oatmeal",
+      "ayam"
+    ],
     "ingredients": [
-      { "item": "Instant Oatmeal", "qty": "4 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Ayam Suwir (stok)", "qty": "2 sdm", "affiliateUrl": null },
-      { "item": "Kaldu Ayam Bubuk", "qty": "1/2 sdt", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Goreng", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Instant Oatmeal",
+        "qty": "4 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Ayam Suwir (stok)",
+        "qty": "2 sdm",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Kaldu Ayam Bubuk",
+        "qty": "1/2 sdt",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Goreng",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Seduh oatmeal dengan air panas, aduk hingga tekstur seperti bubur.",
       "Masukkan kaldu bubuk, aduk rata.",
       "Taburi ayam suwir, kecap asin, lada, dan bawang goreng."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/red/white?text=Oatmeal"
   },
   {
     "id": 35,
@@ -677,19 +1339,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["brokoli", "sayur"],
+    "tags": [
+      "brokoli",
+      "sayur"
+    ],
     "ingredients": [
-      { "item": "Brokoli (potong per kuntum)", "qty": "1 bonggol", "affiliateUrl": null },
-      { "item": "Bawang Putih (cincang)", "qty": "3 siung", "affiliateUrl": null },
-      { "item": "Saus Tiram", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Tepung Maizena (cairkan)", "qty": "1 sdt", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Brokoli (potong per kuntum)",
+        "qty": "1 bonggol",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Putih (cincang)",
+        "qty": "3 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Saus Tiram",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Tepung Maizena (cairkan)",
+        "qty": "1 sdt",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Rendam brokoli di air garam sebentar, cuci bersih.",
       "Tumis bawang putih hingga harum.",
       "Masukkan brokoli dan sedikit air, tutup wajan sebentar (steam).",
       "Masukkan saus tiram dan larutan maizena, masak hingga kuah mengental."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/red/white?text=Tumis"
   },
   {
     "id": 36,
@@ -697,19 +1379,39 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["telur", "tomat"],
+    "tags": [
+      "telur",
+      "tomat"
+    ],
     "ingredients": [
-      { "item": "Telur", "qty": "3 butir", "affiliateUrl": null },
-      { "item": "Tomat (iris besar)", "qty": "2 buah", "affiliateUrl": null },
-      { "item": "Daun Bawang", "qty": "1 batang", "affiliateUrl": null },
-      { "item": "Saus Tomat", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Telur",
+        "qty": "3 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Tomat (iris besar)",
+        "qty": "2 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Daun Bawang",
+        "qty": "1 batang",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Saus Tomat",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Kocok telur, goreng orak-arik besar, angkat sisihkan.",
       "Tumis tomat sampai agak hancur.",
       "Masukkan kembali telur, tambah saus tomat, gula, dan garam.",
       "Aduk rata, taburi daun bawang."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Telur"
   },
   {
     "id": 37,
@@ -717,19 +1419,43 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["tahu", "pedas"],
+    "tags": [
+      "tahu",
+      "pedas"
+    ],
     "ingredients": [
-      { "item": "Tahu Sumedang/Pong", "qty": "10 buah", "affiliateUrl": null },
-      { "item": "Gula Merah", "qty": "1 keping", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Cabai Rawit Hijau", "qty": "5 buah", "affiliateUrl": null },
-      { "item": "Bawang Merah", "qty": "2 siung", "affiliateUrl": null },
-      { "item": "Asam Jawa/Cuka", "qty": "sedikit", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Tahu Sumedang/Pong",
+        "qty": "10 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Gula Merah",
+        "qty": "1 keping",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Cabai Rawit Hijau",
+        "qty": "5 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Merah",
+        "qty": "2 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Asam Jawa/Cuka",
+        "qty": "sedikit",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Ulek kasar bawang merah, cabai, gula merah, garam, dan asam jawa.",
       "Siram dengan sedikit air hangat, koreksi rasa (manis asam pedas).",
       "Potong-potong tahu, siram dengan kuah gejrot."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/red/white?text=Tahu"
   },
   {
     "id": 38,
@@ -737,19 +1463,39 @@
     "category": "sahur",
     "time": 12,
     "difficulty": "Medium",
-    "tags": ["kulit melinjo", "teri"],
+    "tags": [
+      "kulit melinjo",
+      "teri"
+    ],
     "ingredients": [
-      { "item": "Kulit Melinjo Merah (iris)", "qty": "100 gr", "affiliateUrl": null },
-      { "item": "Teri Nasi/Medan", "qty": "2 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Cabai Merah & Hijau", "qty": "4 buah", "affiliateUrl": null },
-      { "item": "Bawang Merah & Putih", "qty": "3 siung", "affiliateUrl": null }
+      {
+        "item": "Kulit Melinjo Merah (iris)",
+        "qty": "100 gr",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Teri Nasi/Medan",
+        "qty": "2 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Cabai Merah & Hijau",
+        "qty": "4 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Merah & Putih",
+        "qty": "3 siung",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Goreng teri hingga kering, sisihkan.",
       "Tumis bawang dan cabai.",
       "Masukkan kulit melinjo, beri sedikit air agar matang empuk.",
       "Masukkan teri goreng, gula, dan garam. Aduk rata."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/blue/white?text=Tumis"
   },
   {
     "id": 39,
@@ -757,19 +1503,39 @@
     "category": "sahur",
     "time": 15,
     "difficulty": "Medium",
-    "tags": ["teri", "kacang"],
+    "tags": [
+      "teri",
+      "kacang"
+    ],
     "ingredients": [
-      { "item": "Teri Jengki", "qty": "100 gr", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Kacang Tanah", "qty": "50 gr", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bumbu Balado Instan/Ulek", "qty": "2 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Daun Jeruk", "qty": "2 lembar", "affiliateUrl": null }
+      {
+        "item": "Teri Jengki",
+        "qty": "100 gr",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Kacang Tanah",
+        "qty": "50 gr",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bumbu Balado Instan/Ulek",
+        "qty": "2 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Daun Jeruk",
+        "qty": "2 lembar",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Goreng kacang tanah hingga matang.",
       "Goreng teri hingga kering garing.",
       "Tumis bumbu balado dan daun jeruk dengan sedikit minyak sampai matang.",
       "Matikan api, tunggu bumbu agak dingin, baru campur teri dan kacang (agar tetap renyah)."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/purple/white?text=Teri"
   },
   {
     "id": 40,
@@ -777,19 +1543,38 @@
     "category": "sahur",
     "time": 15,
     "difficulty": "Easy",
-    "tags": ["telur"],
+    "tags": [
+      "telur"
+    ],
     "ingredients": [
-      { "item": "Telur Rebus (kupas)", "qty": "4 butir", "affiliateUrl": null },
-      { "item": "Teh Celup", "qty": "2 kantong", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Kecap Manis", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Daun Salam & Lengkuas", "qty": "secukupnya", "affiliateUrl": null }
+      {
+        "item": "Telur Rebus (kupas)",
+        "qty": "4 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Teh Celup",
+        "qty": "2 kantong",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Kecap Manis",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Daun Salam & Lengkuas",
+        "qty": "secukupnya",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Rebus air dengan teh celup, kecap, salam, lengkuas, dan garam sampai pekat.",
       "Masukkan telur rebus kupas.",
       "Masak dengan api sedang sampai warna telur cokelat gelap.",
       "Angkat (lebih enak jika didiamkan semalaman)."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Telur"
   },
   {
     "id": 41,
@@ -797,20 +1582,44 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["ayam", "sambal"],
+    "tags": [
+      "ayam",
+      "sambal"
+    ],
     "ingredients": [
-      { "item": "Ayam Goreng/Rebus (suwir)", "qty": "100 gr", "affiliateUrl": null },
-      { "item": "Bawang Merah (iris)", "qty": "5 butir", "affiliateUrl": null },
-      { "item": "Serai (iris halus)", "qty": "1 batang", "affiliateUrl": null },
-      { "item": "Daun Jeruk (iris halus)", "qty": "2 lembar", "affiliateUrl": null },
-      { "item": "Minyak Kelapa Panas", "qty": "2 sdm", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Ayam Goreng/Rebus (suwir)",
+        "qty": "100 gr",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Merah (iris)",
+        "qty": "5 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Serai (iris halus)",
+        "qty": "1 batang",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Daun Jeruk (iris halus)",
+        "qty": "2 lembar",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Minyak Kelapa Panas",
+        "qty": "2 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Siapkan ayam suwir di mangkuk.",
       "Campur irisan bawang, serai, daun jeruk, cabai rawit, dan garam.",
       "Siram campuran bumbu dengan minyak kelapa panas, aduk rata (bejek).",
       "Campurkan sambal matah ke ayam suwir."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/orange/white?text=Ayam"
   },
   {
     "id": 42,
@@ -818,18 +1627,33 @@
     "category": "sahur",
     "time": 15,
     "difficulty": "Easy",
-    "tags": ["sayur asem"],
+    "tags": [
+      "sayur asem"
+    ],
     "ingredients": [
-      { "item": "Paket Sayur Asem (siap pakai)", "qty": "1 bungkus", "affiliateUrl": null },
-      { "item": "Bumbu Racik Sayur Asem", "qty": "1 bungkus", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Air", "qty": "700 ml", "affiliateUrl": null }
+      {
+        "item": "Paket Sayur Asem (siap pakai)",
+        "qty": "1 bungkus",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bumbu Racik Sayur Asem",
+        "qty": "1 bungkus",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Air",
+        "qty": "700 ml",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Didihkan air.",
       "Masukkan jagung dan melinjo (sayuran keras) dulu.",
       "Masukkan bumbu racik.",
       "Masukkan sisa sayuran (daun-daunan), masak sebentar sampai layu."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Sayur"
   },
   {
     "id": 43,
@@ -837,19 +1661,39 @@
     "category": "sahur",
     "time": 12,
     "difficulty": "Medium",
-    "tags": ["buncis", "daging"],
+    "tags": [
+      "buncis",
+      "daging"
+    ],
     "ingredients": [
-      { "item": "Buncis (potong kecil)", "qty": "100 gr", "affiliateUrl": null },
-      { "item": "Daging Giling", "qty": "50 gr", "affiliateUrl": null },
-      { "item": "Bawang Putih (cincang)", "qty": "2 siung", "affiliateUrl": null },
-      { "item": "Saus Tiram", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Buncis (potong kecil)",
+        "qty": "100 gr",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Daging Giling",
+        "qty": "50 gr",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bawang Putih (cincang)",
+        "qty": "2 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Saus Tiram",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bawang putih sampai harum.",
       "Masukkan daging giling, masak sampai berubah warna dan matang.",
       "Masukkan buncis, beri saus tiram dan sedikit air.",
       "Masak sampai buncis matang dan air menyusut."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Tumis"
   },
   {
     "id": 44,
@@ -857,19 +1701,39 @@
     "category": "sahur",
     "time": 8,
     "difficulty": "Easy",
-    "tags": ["roti", "coklat"],
+    "tags": [
+      "roti",
+      "coklat"
+    ],
     "ingredients": [
-      { "item": "Roti Tawar (kupas)", "qty": "4 lembar", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Selai Coklat/Meises", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Telur (pencelup)", "qty": "1 butir", "affiliateUrl": null },
-      { "item": "Tepung Panir", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Roti Tawar (kupas)",
+        "qty": "4 lembar",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Selai Coklat/Meises",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Telur (pencelup)",
+        "qty": "1 butir",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Tepung Panir",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Pipihkan roti tawar, isi dengan selai coklat, lipat segitiga/gulung.",
       "Rekatkan pinggiran dengan sedikit telur/air.",
       "Celup ke telur kocok, gulingkan di tepung panir.",
       "Goreng sebentar di minyak panas."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Roti"
   },
   {
     "id": 45,
@@ -877,18 +1741,38 @@
     "category": "sahur",
     "time": 15,
     "difficulty": "Easy",
-    "tags": ["sop", "makaroni"],
+    "tags": [
+      "sop",
+      "makaroni"
+    ],
     "ingredients": [
-      { "item": "Makaroni (rebus setengah matang)", "qty": "segenggam", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bakso Sapi", "qty": "5 butir", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Wortel (iris)", "qty": "1 buah", "affiliateUrl": null },
-      { "item": "Bumbu Sop Instan", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Makaroni (rebus setengah matang)",
+        "qty": "segenggam",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bakso Sapi",
+        "qty": "5 butir",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Wortel (iris)",
+        "qty": "1 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bumbu Sop Instan",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Didihkan air, masukkan wortel dan bakso.",
       "Setelah wortel empuk, masukkan makaroni dan bumbu sop.",
       "Masak sebentar, taburi daun bawang dan seledri."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/green/white?text=Sop"
   },
   {
     "id": 46,
@@ -896,19 +1780,38 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Medium",
-    "tags": ["tempe"],
+    "tags": [
+      "tempe"
+    ],
     "ingredients": [
-      { "item": "Tempe (iris tipis lebar)", "qty": "1/2 papan", "affiliateUrl": null },
-      { "item": "Tepung Bumbu Serbaguna", "qty": "1 bungkus", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Daun Bawang (iris)", "qty": "2 batang", "affiliateUrl": null },
-      { "item": "Air", "qty": "secukupnya", "affiliateUrl": null }
+      {
+        "item": "Tempe (iris tipis lebar)",
+        "qty": "1/2 papan",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Tepung Bumbu Serbaguna",
+        "qty": "1 bungkus",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Daun Bawang (iris)",
+        "qty": "2 batang",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Air",
+        "qty": "secukupnya",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Campur tepung bumbu, air, dan daun bawang (adonan agak kental).",
       "Celupkan tempe ke adonan.",
       "Goreng di minyak panas sebentar saja (jangan sampai terlalu kering/crispy).",
       "Angkat selagi masih agak lembek (ciri khas mendoan)."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/orange/white?text=Tempe"
   },
   {
     "id": 47,
@@ -916,19 +1819,38 @@
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
-    "tags": ["terong"],
+    "tags": [
+      "terong"
+    ],
     "ingredients": [
-      { "item": "Terong Ungu (potong dadu)", "qty": "2 buah", "affiliateUrl": null },
-      { "item": "Kecap Manis", "qty": "3 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Bawang Putih & Merah", "qty": "3 siung", "affiliateUrl": null },
-      { "item": "Cabai Rawit", "qty": "sesuai selera", "affiliateUrl": null }
+      {
+        "item": "Terong Ungu (potong dadu)",
+        "qty": "2 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Kecap Manis",
+        "qty": "3 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Bawang Putih & Merah",
+        "qty": "3 siung",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Cabai Rawit",
+        "qty": "sesuai selera",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Goreng terong sebentar sampai layu, tiriskan.",
       "Tumis bawang dan cabai.",
       "Masukkan terong goreng, tambahkan kecap manis dan sedikit air.",
       "Aduk rata sampai bumbu meresap."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/blue/white?text=Tumis"
   },
   {
     "id": 48,
@@ -936,18 +1858,38 @@
     "category": "sahur",
     "time": 15,
     "difficulty": "Medium",
-    "tags": ["tahu", "mie"],
+    "tags": [
+      "tahu",
+      "mie"
+    ],
     "ingredients": [
-      { "item": "Tahu Putih (haluskan)", "qty": "2 buah", "affiliateUrl": null },
-      { "item": "Mie Instan (remas, rebus)", "qty": "1 bungkus", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Wortel (parut)", "qty": "sedikit", "affiliateUrl": null },
-      { "item": "Telur", "qty": "1 butir", "affiliateUrl": null }
+      {
+        "item": "Tahu Putih (haluskan)",
+        "qty": "2 buah",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Mie Instan (remas, rebus)",
+        "qty": "1 bungkus",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Wortel (parut)",
+        "qty": "sedikit",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Telur",
+        "qty": "1 butir",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Campur tahu halus, mie rebus, wortel, bumbu mie instan, dan telur.",
       "Bentuk bulat-bulat dengan bantuan dua sendok.",
       "Goreng dalam minyak panas hingga kuning keemasan."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Bola-Bola"
   },
   {
     "id": 49,
@@ -955,19 +1897,39 @@
     "category": "sahur",
     "time": 12,
     "difficulty": "Medium",
-    "tags": ["timun", "wortel"],
+    "tags": [
+      "timun",
+      "wortel"
+    ],
     "ingredients": [
-      { "item": "Timun & Wortel (potong stik)", "qty": "secukupnya", "affiliateUrl": null },
-      { "item": "Bumbu Kuning Halus (beli jadi)", "qty": "1 sdm", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Cuka/Jeruk Nipis", "qty": "sedikit", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Gula Pasir", "qty": "secukupnya", "affiliateUrl": "PLACEHOLDER_LINK" }
+      {
+        "item": "Timun & Wortel (potong stik)",
+        "qty": "secukupnya",
+        "affiliateUrl": null
+      },
+      {
+        "item": "Bumbu Kuning Halus (beli jadi)",
+        "qty": "1 sdm",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Cuka/Jeruk Nipis",
+        "qty": "sedikit",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Gula Pasir",
+        "qty": "secukupnya",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      }
     ],
     "steps": [
       "Tumis bumbu kuning hingga harum.",
       "Masukkan wortel dan sedikit air, masak sampai setengah matang.",
       "Masukkan timun, gula, garam, dan cuka.",
       "Masak sebentar agar sayuran tetap renyah."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/orange/white?text=Acar"
   },
   {
     "id": 50,
@@ -975,16 +1937,28 @@
     "category": "sahur",
     "time": 0,
     "difficulty": "Easy",
-    "tags": ["kentang", "stok"],
+    "tags": [
+      "kentang",
+      "stok"
+    ],
     "ingredients": [
-      { "item": "Kentang Mustofa (Beli Jadi)", "qty": "1 toples", "affiliateUrl": "PLACEHOLDER_LINK" },
-      { "item": "Nasi Hangat", "qty": "1 piring", "affiliateUrl": null }
+      {
+        "item": "Kentang Mustofa (Beli Jadi)",
+        "qty": "1 toples",
+        "affiliateUrl": "https://tokopedia.com/search?q=bahan"
+      },
+      {
+        "item": "Nasi Hangat",
+        "qty": "1 piring",
+        "affiliateUrl": null
+      }
     ],
     "steps": [
       "Ini adalah menu darurat paling praktis.",
       "Ambil nasi hangat.",
       "Taburkan kering kentang mustofa di atasnya.",
       "Siap disantap (bisa tambah telur ceplok jika sempat)."
-    ]
+    ],
+    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Kering"
   }
 ]
