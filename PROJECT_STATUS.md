@@ -43,8 +43,8 @@ To ensure the app feels authentic to the fasting experience, specific mechanics 
 The Home Page is polished. We now shift focus to **Core Game Loop** and **Progression** to make the app addictive.
 
 ### 1. Gamification Deep Dive
-*   [ ] **Leveling System:** Define XP thresholds (e.g., Level 1 -> 2 needs 100 XP).
-*   [ ] **Badges/Achievements:** Visual rewards for milestones (e.g., "7 Day Streak", "Donator").
+*   [x] **Leveling System:** Define XP thresholds (e.g., Level 1 -> 2 needs 100 XP).
+*   [x] **Badges/Achievements:** Visual rewards for milestones (e.g., "7 Day Streak", "Donator").
 *   [ ] **Leaderboard (Mock):** Simple friend ranking to encourage competition.
 
 ### 2. Content Expansion
