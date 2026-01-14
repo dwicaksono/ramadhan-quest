@@ -22,18 +22,38 @@ export interface GameState {
   }
 }
 
-// XP thresholds for leveling up
+// XP thresholds for leveling up (Level -> Total XP Required)
 export const XP_THRESHOLDS: Record<number, number> = {
   1: 0,
   2: 100,
   3: 250,
   4: 500,
-  5: 1000,
-  6: 1750,
-  7: 2750,
-  8: 4000,
-  9: 5500,
-  10: 7500,
+  5: 800,
+  6: 1200,
+  7: 1700,
+  8: 2300,
+  9: 3000,
+  10: 3800,
+  11: 4700,
+  12: 5700,
+  13: 6800,
+  14: 8000,
+  15: 9500,
+  16: 11000,
+  17: 12800,
+  18: 14800,
+  19: 17000,
+  20: 20000,
+  21: 23000,
+  22: 26500,
+  23: 30500,
+  24: 35000,
+  25: 40000,
+  26: 45500,
+  27: 51500,
+  28: 58000,
+  29: 65000,
+  30: 75000, // Milestone
 }
 
 // Action XP rewards

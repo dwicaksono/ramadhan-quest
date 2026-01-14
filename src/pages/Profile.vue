@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useGameStore } from '@/stores/game'
+import { useLeveling } from '@/composables/useLeveling'
 import { BaseCard, BaseButton, BaseProgress } from '@/components/base'
+import TrophyRoom from '@/components/profile/TrophyRoom.vue'
 import { usePrayerTimes } from '@/composables/usePrayerTimes'
 import { useStorage } from '@vueuse/core'
 
@@ -9,6 +11,8 @@ import { toast } from 'vue-sonner'
 import { exportData, importData, clearAllData } from '@/utils/storage'
 
 const gameStore = useGameStore()
+const { level, xp, xpToNextLevel, progressPercent, levelTitle } = useLeveling()
+
 const nameInput = ref(gameStore.state.userName)
 const fileInput = ref<HTMLInputElement | null>(null)
 
@@ -115,21 +119,27 @@ function handleReset() {
       <h1 class="text-2xl font-bold text-secondary-900 dark:text-white">
         {{ gameStore.state.userName || 'Muslim' }}
       </h1>
-      <p class="text-sm text-secondary-500 dark:text-secondary-400">Level {{ gameStore.state.level }}</p>
+      <p class="text-sm text-primary-600 dark:text-primary-400 font-medium">{{ levelTitle }}</p>
+      <p class="text-xs text-secondary-500 dark:text-secondary-400">Level {{ level }}</p>
     </div>
 
-    <!-- Stats -->
+    <!-- Level Progress Card -->
     <BaseCard>
       <div class="space-y-4">
+        <!-- XP Progress -->
         <div>
           <div class="flex justify-between text-sm mb-1">
-            <span class="text-secondary-600 dark:text-secondary-400">XP</span>
-            <span class="font-medium dark:text-white">{{ gameStore.state.xp }} XP</span>
+            <span class="text-secondary-600 dark:text-secondary-400">XP Progress</span>
+            <span class="font-medium dark:text-white">{{ xp }} / {{ xp + xpToNextLevel }} XP</span>
           </div>
-          <BaseProgress :value="gameStore.currentLevelProgress" variant="primary" />
+          <BaseProgress :value="progressPercent" variant="primary" />
+          <p class="text-xs text-secondary-400 dark:text-secondary-500 mt-1 text-right">
+            {{ xpToNextLevel }} XP to Level {{ level + 1 }}
+          </p>
         </div>
 
-        <div class="grid grid-cols-3 gap-4 text-center">
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-3 gap-4 text-center pt-2 border-t border-secondary-100 dark:border-secondary-700">
           <div>
             <p class="text-2xl font-bold text-primary-600 dark:text-primary-400">{{ gameStore.state.streak }}</p>
             <p class="text-xs text-secondary-500 dark:text-secondary-400">Streak</p>
@@ -145,6 +155,9 @@ function handleReset() {
         </div>
       </div>
     </BaseCard>
+
+    <!-- Trophy Room -->
+    <TrophyRoom />
 
     <!-- Name settings -->
     <BaseCard>
