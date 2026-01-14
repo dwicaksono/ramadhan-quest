@@ -4,9 +4,13 @@ import { useHabitStore } from '@/stores/habit'
 import { useHabitActions } from '@/composables/useHabitActions'
 import HabitList from '@/components/habits/HabitList.vue'
 import { useTransition, TransitionPresets } from '@vueuse/core'
+import { useAudio } from '@/composables/useAudio'
+import { useHaptics } from '@/composables/useHaptics'
 
 const habitStore = useHabitStore()
 const { toggleHabit } = useHabitActions()
+const { playSfx } = useAudio()
+const { trigger } = useHaptics()
 
 // Tab Management
 type Tab = 'spiritual' | 'community' | 'personal' | 'all'
@@ -35,8 +39,16 @@ const xpAnimKey = ref(0) // Force re-render for same-location clicks
 function handleToggle(id: string, event: MouseEvent) {
   const result = toggleHabit(id)
   
-  if (result.success && result.isCompleted) {
-    triggerXpAnimation(result.xpEarned, event.clientX, event.clientY)
+  if (result.success) {
+    if (result.isCompleted) {
+      triggerXpAnimation(result.xpEarned, event.clientX, event.clientY)
+      // Play full success feedback
+      playSfx('success')
+      trigger('medium')
+    } else {
+      // Light feedback for unchecking
+      trigger('light')
+    }
   }
 }
 
@@ -62,30 +74,30 @@ const animatedProgress = useTransition(progressSource, {
 </script>
 
 <template>
-  <div class="px-4 pt-6 pb-24 max-w-md mx-auto min-h-screen bg-stone-50">
+  <div class="px-4 pt-6 pb-24 max-w-md mx-auto min-h-screen bg-stone-50 dark:bg-secondary-950 transition-colors duration-200">
     <!-- Header -->
     <header class="mb-6">
-      <h1 class="text-2xl font-bold text-emerald-800">Target Harian</h1>
-      <p class="text-stone-500 text-sm">Jaga semangat ibadahmu!</p>
+      <h1 class="text-2xl font-bold text-primary-800 dark:text-primary-400">Target Harian</h1>
+      <p class="text-stone-500 dark:text-stone-400 text-sm">Jaga semangat ibadahmu!</p>
       
       <!-- Daily Progress Card -->
-      <div class="mt-4 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-2xl p-4 text-white shadow-lg relative overflow-hidden">
+      <div class="mt-4 bg-gradient-to-r from-primary-600 to-primary-500 rounded-2xl p-4 text-white shadow-lg relative overflow-hidden">
         <div class="absolute right-0 top-0 opacity-10 text-8xl transform translate-x-4 -translate-y-4">
           🌙
         </div>
         
         <div class="relative z-10 flex justify-between items-end mb-2">
           <div>
-            <div class="text-emerald-100 text-sm font-medium">Progress Hari Ini</div>
+            <div class="text-primary-100 text-sm font-medium">Progress Hari Ini</div>
             <div class="text-3xl font-bold font-mono">{{ Math.round(animatedProgress) }}%</div>
           </div>
-          <div class="text-emerald-100 text-sm">
+          <div class="text-primary-100 text-sm">
             {{ habitStore.completedCount }} / {{ habitStore.totalCount }} Selesai
           </div>
         </div>
         
         <!-- Progress Bar -->
-        <div class="h-2 bg-emerald-900/30 rounded-full overflow-hidden">
+        <div class="h-2 bg-primary-900/30 rounded-full overflow-hidden">
           <div 
             class="h-full bg-yellow-400 rounded-full transition-all duration-500 ease-out shadow-[0_0_10px_rgba(250,204,21,0.5)]"
             :style="{ width: `${animatedProgress}%` }"
@@ -95,7 +107,7 @@ const animatedProgress = useTransition(progressSource, {
     </header>
 
     <!-- Tabs -->
-    <div class="sticky top-0 z-20 bg-stone-50/95 backdrop-blur-sm py-2 -mx-4 px-4 border-b border-stone-200/50 mb-4 overflow-x-auto no-scrollbar scroll-smooth">
+    <div class="sticky top-0 z-20 bg-stone-50/95 dark:bg-secondary-950/95 backdrop-blur-sm py-2 -mx-4 px-4 border-b border-stone-200/50 dark:border-secondary-800 mb-4 overflow-x-auto no-scrollbar scroll-smooth">
       <div class="flex gap-2">
         <button 
           v-for="tab in tabs" 
@@ -103,8 +115,8 @@ const animatedProgress = useTransition(progressSource, {
           @click="activeTab = tab.id"
           class="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap"
           :class="activeTab === tab.id 
-            ? 'bg-emerald-600 text-white shadow-md shadow-emerald-200' 
-            : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'"
+            ? 'bg-primary-600 text-white shadow-md shadow-primary-200 dark:shadow-none' 
+            : 'bg-white dark:bg-secondary-900 text-stone-600 dark:text-stone-400 border border-stone-200 dark:border-secondary-800 hover:bg-stone-50 dark:hover:bg-secondary-800'"
         >
           <span>{{ tab.icon }}</span>
           <span>{{ tab.label }}</span>
@@ -113,10 +125,28 @@ const animatedProgress = useTransition(progressSource, {
     </div>
 
     <!-- Content -->
+    <!-- Content -->
     <HabitList 
+      v-if="filteredHabits.length > 0"
       :habits="filteredHabits"
       @toggle="handleToggle"
     />
+
+    <!-- Empty State -->
+    <div 
+      v-else 
+      class="flex flex-col items-center justify-center py-12 px-4 text-center space-y-4"
+    >
+      <div class="w-24 h-24 bg-stone-100 dark:bg-secondary-800 rounded-full flex items-center justify-center text-4xl mb-2">
+        🍃
+      </div>
+      <div>
+        <h3 class="text-lg font-bold text-stone-700 dark:text-stone-200">Tidak ada target</h3>
+        <p class="text-sm text-stone-500 dark:text-stone-400 max-w-xs mx-auto">
+          Belum ada target untuk kategori ini. Coba pilih kategori lain atau istirahat sejenak.
+        </p>
+      </div>
+    </div>
 
     <!-- Floating XP Animation -->
     <Transition

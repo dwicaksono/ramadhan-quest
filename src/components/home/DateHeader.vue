@@ -1,70 +1,105 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useGameStore } from '@/stores/game'
+import { useNow, useDateFormat } from '@vueuse/core'
+import { isDark, toggleDark } from '@/composables/useTheme'
+import { usePrayerTimes } from '@/composables/usePrayerTimes'
 
 const gameStore = useGameStore()
+const now = useNow()
 
-// Ramadan date calculation (simplified)
-const ramadanDay = computed(() => {
-  // This would normally use Hijri calendar library
-  // For now, we'll show a placeholder
-  return 12
+// Real-time formatted string
+const timeStr = useDateFormat(now, 'HH:mm')
+
+// Prayer Times Logic
+const { upcomingPrayer, locationName, detectLocation } = usePrayerTimes()
+
+onMounted(() => {
+  // Try to detect location on first load if not already set custom
+  // Browser might block this until user interaction, but worth a try for returning users
+  detectLocation()
 })
 
-const hijriYear = computed(() => 1445)
-
-// Get current Maghrib time (simplified)
-const maghribTime = computed(() => '18:32')
+// Ramadan date calculation (Mock for now, typically needs Hijri library)
+const ramadanDay = computed(() => 12)
 
 const greeting = computed(() => {
-  const hour = new Date().getHours()
-  if (hour < 5) return 'Selamat Sahur'
-  if (hour < 12) return 'Salam'
-  if (hour < 18) return 'Salam'
+  const hour = now.value.getHours()
+  if (hour < 4) return 'Selamat Sahur'
+  if (hour < 11) return 'Selamat Pagi'
+  if (hour < 15) return 'Selamat Siang'
+  if (hour < 18) return 'Selamat Sore'
   return 'Selamat Berbuka'
 })
 </script>
 
 <template>
-  <div class="space-y-4">
+  <div class="space-y-6">
     <!-- User Header -->
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-3">
         <!-- Avatar -->
-        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-          <span class="text-xl">🧕</span>
+        <div class="w-12 h-12 bg-secondary-100 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-400 rounded-full flex items-center justify-center">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+          </svg>
         </div>
         <div>
-          <p class="text-sm text-secondary-500">{{ greeting }},</p>
-          <p class="text-lg font-bold text-secondary-900">
-            {{ gameStore.state.userName || 'Muslim' }}
-          </p>
+          <p class="text-xs font-bold text-secondary-400 uppercase tracking-wider">{{ greeting }}</p>
+          <div class="flex items-center gap-2">
+            <p class="text-xl font-bold text-secondary-900 dark:text-white leading-none">
+              {{ gameStore.state.userName || 'Muslim' }}
+            </p>
+            <span v-if="locationName !== 'Jakarta'" class="text-[10px] bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 px-1.5 py-0.5 rounded">📍</span>
+          </div>
         </div>
       </div>
 
-      <!-- Notification bell -->
-      <button class="w-10 h-10 bg-secondary-50 rounded-full flex items-center justify-center hover:bg-secondary-100 transition-colors">
-        <svg class="w-5 h-5 text-secondary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-        </svg>
-      </button>
+      <!-- Actions -->
+      <div class="flex items-center gap-2">
+        <!-- Theme Toggle -->
+        <button 
+          @click="toggleDark()"
+          class="w-10 h-10 rounded-full flex items-center justify-center transition-colors active:scale-95 text-xl"
+          :class="isDark ? 'bg-secondary-800 text-yellow-400' : 'bg-white text-orange-400 shadow-sm'"
+          :aria-label="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+        >
+          <span v-if="isDark">🌙</span>
+          <span v-else>☀️</span>
+        </button>
+
+        <!-- Notification bell -->
+        <button class="w-10 h-10 rounded-full flex items-center justify-center transition-colors active:scale-95 bg-white dark:bg-secondary-800 shadow-sm text-secondary-600 dark:text-secondary-400">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Date Card -->
-    <div class="bg-secondary-50 rounded-2xl px-4 py-3">
-      <div class="flex items-center justify-between">
+    <!-- Dashboard Card -->
+    <div class="bg-primary-600 dark:bg-[#121212] text-white rounded-[2rem] p-6 shadow-xl relative overflow-hidden border border-primary-500 dark:border-white/5">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 pattern-arabesque opacity-10 pointer-events-none"></div>
+
+      <div class="relative z-10 flex items-end justify-between">
+        <!-- Left: Ramadan Day -->
         <div>
-          <p class="text-xs text-secondary-500 uppercase tracking-wider">TODAY</p>
-          <p class="text-lg font-bold text-secondary-900">
-            {{ ramadanDay }}<sup>th</sup> Ramadan
-          </p>
+          <p class="text-[10px] text-primary-100 dark:text-orange-200/80 font-bold uppercase tracking-widest mb-1">RAMADAN DAY</p>
+          <div class="flex items-baseline gap-1">
+            <span class="text-5xl font-bold tracking-tight text-white">{{ ramadanDay }}</span>
+            <span class="text-lg text-primary-200 dark:text-white/40 font-medium">/ 30</span>
+          </div>
         </div>
+
+        <!-- Right: Clock -->
         <div class="text-right">
-          <p class="text-sm font-medium text-secondary-600">{{ hijriYear }} AH</p>
-          <p class="text-xs text-secondary-500 flex items-center gap-1">
-            <span>🌙</span>
-            Maghrib {{ maghribTime }}
-          </p>
+          <p class="text-4xl font-bold tracking-tight text-white mb-1">{{ timeStr }}</p>
+          <div class="inline-flex items-center bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full px-3 py-1">
+            <span class="text-[10px] font-medium text-white truncate max-w-[100px]">
+              {{ upcomingPrayer ? `${upcomingPrayer.name} ${useDateFormat(upcomingPrayer.time, 'HH:mm').value}` : 'Loading...' }}
+            </span>
+          </div>
         </div>
       </div>
     </div>

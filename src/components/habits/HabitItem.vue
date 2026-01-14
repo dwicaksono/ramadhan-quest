@@ -15,7 +15,7 @@ const emit = defineEmits<{
 
 const categoryColor = computed(() => {
   switch (props.habit.category) {
-    case 'spiritual': return 'bg-emerald-100 text-emerald-700 border-emerald-200'
+    case 'spiritual': return 'bg-primary-100 text-primary-700 border-primary-200'
     case 'community': return 'bg-blue-100 text-blue-700 border-blue-200'
     case 'personal': return 'bg-amber-100 text-amber-700 border-amber-200'
     default: return 'bg-gray-100 text-gray-700 border-gray-200'
@@ -26,7 +26,7 @@ const iconBg = computed(() => {
   if (props.isCompleted) return 'bg-primary-500 text-white'
   
   switch (props.habit.category) {
-    case 'spiritual': return 'bg-emerald-200'
+    case 'spiritual': return 'bg-primary-200'
     case 'community': return 'bg-blue-200'
     case 'personal': return 'bg-amber-200'
     default: return 'bg-gray-200'

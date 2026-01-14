@@ -33,10 +33,10 @@ defineProps<{
       shadow !== false ? 'shadow-sm' : '',
       // Variant
       {
-        'border border-secondary-100': variant === 'default' || !variant,
-        'bg-primary-50 border border-primary-100': variant === 'primary',
-        'bg-secondary-50 border border-secondary-100': variant === 'secondary',
-        'bg-accent-50 border border-accent-100': variant === 'accent',
+        'bg-white dark:bg-secondary-800 border border-secondary-100 dark:border-secondary-700': variant === 'default' || !variant,
+        'bg-primary-50 dark:bg-primary-900/20 border border-primary-100 dark:border-primary-800': variant === 'primary',
+        'bg-secondary-50 dark:bg-secondary-800 border border-secondary-100 dark:border-secondary-700': variant === 'secondary',
+        'bg-accent-50 dark:bg-accent-900/20 border border-accent-100 dark:border-accent-800': variant === 'accent',
       },
     ]"
   >

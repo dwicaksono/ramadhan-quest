@@ -41,7 +41,7 @@ Aplikasi PWA "Super App" mini untuk menemani ibadah puasa yang menggabungkan pro
 4. **Menjelang Lebaran (H-7):**
 * User buka fitur **Dompet**.
 * Hitung alokasi THR & pecahan uang.
-* User menyisihkan uang -> Dapat **Coins** untuk beli baju baru bagi karakter virtualnya.
+* User menyisihkan uang -> Dapat **Coins** sebagai skor kebaikan.
 
 
 

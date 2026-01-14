@@ -16,6 +16,11 @@ function getDefaultState(): GameState {
     lastActiveDate: new Date().toISOString().split('T')[0],
     streak: 0,
     showLevelUpModal: false,
+    waterLog: 0,
+    settings: {
+      soundEnabled: true,
+      hapticsEnabled: true
+    }
   }
 }
 
@@ -133,6 +138,10 @@ export const useGameStore = defineStore('game', () => {
 
       state.value.lastActiveDate = today
       state.value.energy = Math.min(100, state.value.energy + 20)
+      
+      // Reset Daily Counters
+      state.value.waterLog = 0 
+      
       saveToStorage()
       return true
     }
@@ -142,6 +151,27 @@ export const useGameStore = defineStore('game', () => {
   function reset() {
     state.value = getDefaultState()
     saveToStorage()
+  }
+
+  function toggleSound(enabled: boolean) {
+    state.value.settings.soundEnabled = enabled
+    saveToStorage()
+  }
+
+  function toggleHaptics(enabled: boolean) {
+    state.value.settings.hapticsEnabled = enabled
+    saveToStorage()
+  }
+
+  function logWater() {
+    state.value.waterLog = (state.value.waterLog || 0) + 1
+    // Reward for first 8 glasses
+    if (state.value.waterLog <= 8) {
+      addXP(5) 
+      addEnergy(2)
+    }
+    saveToStorage()
+    return state.value.waterLog
   }
 
   return {
@@ -160,5 +190,8 @@ export const useGameStore = defineStore('game', () => {
     checkDailyLogin,
     reset,
     closeLevelUpModal,
+    toggleSound,
+    toggleHaptics,
+    logWater,
   }
 })
