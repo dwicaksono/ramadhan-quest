@@ -17,6 +17,7 @@ function getDefaultState(): GameState {
     streak: 0,
     showLevelUpModal: false,
     waterLog: 0,
+    sadaqahTotal: 0,
     settings: {
       soundEnabled: true,
       hapticsEnabled: true
@@ -174,6 +175,15 @@ export const useGameStore = defineStore('game', () => {
     return state.value.waterLog
   }
 
+  function logSadaqah(amount: number) {
+    state.value.sadaqahTotal = (state.value.sadaqahTotal || 0) + amount
+    // Big reward for charity
+    addXP(50)
+    addEnergy(10)
+    saveToStorage()
+    return state.value.sadaqahTotal
+  }
+
   return {
     // State
     state,
@@ -193,5 +203,6 @@ export const useGameStore = defineStore('game', () => {
     toggleSound,
     toggleHaptics,
     logWater,
+    logSadaqah,
   }
 })

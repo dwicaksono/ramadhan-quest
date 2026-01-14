@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useGameStore } from '@/stores/game'
 
 
@@ -33,6 +33,21 @@ const moodAnimationClass = computed(() => {
     case 'tired': return 'animate-tired grayscale-[0.2]'
     case 'happy': return 'hover:scale-105'
     default: return ''
+  }
+})
+
+const floatingXp = ref<number | null>(null)
+const showFloatingXp = ref(false)
+
+// Watch for XP changes to trigger animation
+watch(() => gameStore.state.xp, (newVal, oldVal) => {
+  const diff = newVal - oldVal
+  if (diff > 0) {
+    floatingXp.value = diff
+    showFloatingXp.value = true
+    setTimeout(() => {
+      showFloatingXp.value = false
+    }, 2000)
   }
 })
 
@@ -101,9 +116,27 @@ function triggerBounce() {
         :class="moodAnimationClass"
         @click="triggerBounce"
       >
-        <!-- Inner glow -->
         <div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none hidden dark:block"></div>
         {{ moodEmoji }}
+
+        <!-- Floating XP -->
+        <Transition
+          enter-active-class="transition duration-500 ease-out"
+          enter-from-class="opacity-0 translate-y-4 scale-50"
+          enter-to-class="opacity-100 -translate-y-8 scale-150"
+          leave-active-class="transition duration-300 ease-in"
+          leave-from-class="opacity-100 -translate-y-8"
+          leave-to-class="opacity-0 -translate-y-12"
+        >
+          <div 
+            v-if="showFloatingXp" 
+            class="absolute inset-0 flex items-center justify-center pointer-events-none z-20"
+          >
+            <span class="font-black text-2xl text-yellow-400 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
+              +{{ floatingXp }} XP
+            </span>
+          </div>
+        </Transition>
       </div>
     </div>
   </div>
