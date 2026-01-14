@@ -13,7 +13,7 @@ export default defineConfig({
       manifest: {
         name: 'Ramadan Quest',
         short_name: 'RamadanQuest',
-        description: 'Gamified Ramadan companion app',
+        description: 'Aplikasi gamifikasi untuk menemani ibadah Ramadanmu',
         theme_color: '#10b981',
         background_color: '#f9fafb',
         display: 'standalone',

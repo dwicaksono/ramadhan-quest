@@ -30,11 +30,11 @@ defineEmits<{
       block ? 'w-full' : '',
       // Variant
       {
-        'bg-primary-500 text-white hover:bg-primary-600 shadow-sm': variant === 'primary' || !variant,
-        'bg-secondary-100 text-secondary-700 hover:bg-secondary-200': variant === 'secondary',
-        'border-2 border-primary-500 text-primary-600 hover:bg-primary-50': variant === 'outline',
-        'text-secondary-600 hover:bg-secondary-100': variant === 'ghost',
-        'bg-accent-500 text-white hover:bg-accent-600 shadow-sm': variant === 'accent',
+        'bg-primary-500 text-white hover:bg-primary-600 shadow-sm border border-transparent': variant === 'primary' || !variant,
+        'bg-secondary-100 text-secondary-900 hover:bg-secondary-200 dark:bg-[#121212] dark:text-white dark:border dark:border-white/10 dark:hover:bg-white/5': variant === 'secondary',
+        'border-2 border-primary-500 text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-primary-900/20': variant === 'outline',
+        'text-secondary-600 hover:bg-secondary-100 dark:text-gray-300 dark:hover:bg-white/5': variant === 'ghost',
+        'bg-accent-500 text-white hover:bg-accent-600 shadow-sm border border-transparent': variant === 'accent',
       },
     ]"
     :disabled="disabled || loading"

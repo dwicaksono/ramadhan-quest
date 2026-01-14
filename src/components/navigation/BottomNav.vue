@@ -21,15 +21,16 @@ function navigate(path: string) {
 </script>
 
 <template>
-  <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-secondary-100 px-4 py-2 safe-bottom z-50">
+  <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white dark:bg-secondary-900 border-t border-secondary-100 dark:border-secondary-800 px-4 py-2 safe-bottom z-50">
     <div class="flex items-center justify-around">
       <button
         v-for="item in navItems"
         :key="item.path"
+        :aria-label="item.name"
         class="flex flex-col items-center py-2 px-4 rounded-xl transition-all duration-200"
         :class="currentPath === item.path 
-          ? 'text-primary-600' 
-          : 'text-secondary-400 hover:text-secondary-600'"
+          ? 'text-primary-600 dark:text-primary-400' 
+          : 'text-secondary-400 dark:text-secondary-600 hover:text-secondary-600 dark:hover:text-secondary-400'"
         @click="navigate(item.path)"
       >
         <!-- Home Icon -->
@@ -95,7 +96,6 @@ function navigate(path: string) {
             d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
           />
         </svg>
-
         <!-- Profile Icon -->
         <svg
           v-else-if="item.icon === 'profile'"

@@ -13,6 +13,12 @@ export interface GameState {
   streak: number
   showLevelUpModal?: boolean
   excitedUntil?: number
+  startedAt?: string // Date when user starter playing
+  waterLog: number // Daily water glasses drunk
+  settings: {
+    soundEnabled: boolean
+    hapticsEnabled: boolean
+  }
 }
 
 // XP thresholds for leveling up

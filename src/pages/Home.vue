@@ -7,10 +7,8 @@ const { claimDailyBonus } = useGame()
 
 onMounted(() => {
   // Check for daily login bonus
-  const bonus = claimDailyBonus()
-  if (bonus) {
-    console.log(`Daily bonus claimed! XP: ${bonus.xpEarned}, Streak: ${bonus.streak}`)
-  }
+  // Check for daily login bonus
+  claimDailyBonus()
 })
 </script>
 

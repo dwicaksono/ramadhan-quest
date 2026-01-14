@@ -10,11 +10,15 @@ const gameStore = useGameStore()
 
 onMounted(() => {
   gameStore.checkDailyLogin()
+  
+  // Note: Modern browsers require user interaction before playing audio.
+  // We can't auto-play BGM here without a play button.
+  // toggleBgm(true) 
 })
 </script>
 
 <template>
-  <div class="min-h-screen bg-secondary-50">
+  <div class="min-h-screen">
     <!-- Main content -->
     <RouterView />
 

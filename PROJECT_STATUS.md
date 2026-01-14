@@ -2,79 +2,59 @@
 
 ![Ramadan Quest Logo](./public/app-icon.jpg)
 
-## 📊 Current Status (Week 2 Complete)
+## 📊 Current Status (Week 4 In-Progress)
 
-We have successfully completed the **Core Features Phase** (Week 2), deepening the mechanics and interactions across all modules.
-
+We have significantly enhanced the app with **Global Theming**, **Prayer Times Utility**, and **Settings Integration**.
 
 ### ✅ Completed Features
-1.  **Project Architecture**
-    *   Set up Mobile-First PWA structure (Max-width 430px).
-    *   Integrated **Pinia** for state management with `LocalStorage` persistence.
-    *   Configured **Tailwind CSS** with a semantic color palette (Islamic Green, Warm Gray, Gold).
+1.  **Immersive UI & Theming**
+    *   **Global Dark Mode:** Full support for "True Black" dark mode across all pages.
+    *   **Color Harmonization:** Unified app color scheme to **Lime Primary** (from Emerald/Green).
+    *   **Adaptive Components:** All cards and buttons adapt seamlessly to theme changes.
 
-2.  **Core Logic (Stores & Composables)**
-    *   **Game Engine:** Tracks XP, Level, Energy (Faidth), Coins, and Streak.
-    *   **Wallet:** Logic for THR budgeting and suggested allocations.
-    *   **Kitchen:** Recipe filtering (Sahur/Buka) and details from static JSON.
-    *   **Habit Tracker:** Daily quest system with checklist logic.
+2.  **Core Utilities (Prayer Times)**
+    *   **Adzan Engine:** Integrated `adhan` library for offline, accurate calculation.
+    *   **Smart Location:** Auto-detects GPS coordinates or falls back to Jakarta defaults.
+    *   **Methods:** Support for 10+ calculation standards (Kemenag, MWL, etc.).
 
-3.  **User Interface (MVP)**
-    *   **Home Dashboard:** Bento-grid style layout with Character Status, Daily Quests, and Quick Actions.
-    *   **Kitchen Page:** Searchable recipe list with "Cook" action placeholders.
-    *   **Wallet Page:** Interactive THR budget input and allocation visualization.
-    *   **Profile Page:** User stats (XP/Coins) and settings.
-    *   **Global Notifications:** Stacked toast notifications for feedback (via `vue-sonner`).
-
-4.  **Data**
-    *   Integrated ~40 static recipes for Sahur and Buka (`recipes.json`).
+3.  **Settings & User Control**
+    *   **Profile Dashboard:** Added dedicated settings for Location and Calculation Methods.
+    *   **Notifications:** Implemented Web Notification permission request flow.
+    *   **Persistence:** All preferences saved to LocalStorage.
 
 ---
 
-## 🗺️ Next Steps: Week 2 (Core Features)
+## 🎮 Game Mechanics & Context (The "Ramadhan" Logic)
 
-The focus for the upcoming week is to deepen the mechanics and interactions.
+To ensure the app feels authentic to the fasting experience, specific mechanics apply:
 
-### 1. Habit Tracker (Deep Dive)
-*   [x] Expand the Home widget into a full **Habit Page**.
-*   [x] Add categories: Spiritual (Sholat, Tilawah) vs Social (Sedekah).
-*   [x] Implement **XP Reward Animations** when checking off habits.
-
-### 2. Kitchen & Cooking Mechanism
-*   [x] Connect "Masak" (Cook) button to Game State (Restore Energy/Mood).
-*   [x] Create a **Recipe Detail Modal** showing ingredients and steps.
-*   [x] *Monetization Logic:* Add "Beli Bahan" button (Affiliate link placeholder).
-
-### 3. Wallet & THR Manager
-*   [x] Implement **"Pecahan Uang" (Money Breaker)** logic to help users organize physical cash.
-*   [x] Add "Tabung" feature: Converting budget savings into Game Coins.
-
-### 4. Game Integration
-*   [x] **Level Up System:** Visual feedback when XP threshold is reached.
-*   [x] **Streak System:** Logic to reset streak if user is inactive.
-*   [x] **Character States:** Dynamic emoji changes based on Energy/Mood (Sleepy, Happy, Energetic).
+### 1. Hydration Logic (The 2-4-2 Rule)
+*   **Context:** Muslims fast (no food/drink) from **Subuh** to **Maghrib**.
+*   **Mechanic:** The "Log Water" feature is **LOCKED** during the day (Fasting Hours).
+*   **Goal:** Users must drink 8 glasses during the **Open Window** (Maghrib to Subuh).
+    *   Start: Maghrib (Iftar) - 2 Glasses.
+    *   Night: Tarawih/Night - 4 Glasses.
+    *   End: Subuh (Sahur) - 2 Glasses.
 
 ---
 
----
+## 🗺️ Next Steps: Week 5 (Gamification & Engagement)
 
-## 🗺️ Next Steps: Week 3 (Economy & Polish) - PROPOSED
+The foundation is solid. Now we focus on keeping the user engaged long-term.
 
-Now that the core loops (earning XP/Coins) are active, we need to provide ways to **spend** coins and manage user data.
+### 1. Gamification Deep Dive
+*   [ ] **Leveling System:** Define XP thresholds (e.g., Level 1 -> 2 needs 100 XP).
+*   [ ] **Badges/Achievements:** Visual rewards for milestones (e.g., "7 Day Streak", "Donator").
+*   [ ] **Leaderboard (Mock):** Simple friend ranking to encourage competition.
 
-### 1. The Marketplace ("Toko")
-*   [ ] **Inventory System:** UI to view purchased items.
-*   [ ] **Item Shop:** Buy virtual items (e.g., decorations, new recipe books) with Coins.
-*   [ ] **Gacha/Sedekah Box:** Spend coins for random rewards or "spiritual" buffs.
+### 2. Content Expansion
+*   [ ] **More Habits:** Expand library for "Ramadhan" specific habits (Tarawih, Sedekah).
+*   [ ] **Quran Reading Tracker:** Simple counter for Juz/Halaman read.
 
-### 2. User Settings & Data
-*   [ ] **Profile Edit:** Change name, avatar (if multiple options).
-*   [ ] **Data Persistence:** Export/Import JSON data (since we are using LocalStorage).
-*   [ ] **Reset Progress:** "Danger Zone" to reset game state.
+### 3. Deployment & Release
+*   [ ] **Build Production:** Run final build command.
+*   [ ] **Deployment:** Deploy to Vercel/Netlify.
 
-### 3. Sound & Haptics
-*   [ ] **BGM & SFX:** Add subtle background music and sound effects for actions (cooking, level up).
-*   [ ] **Haptic Feedback:** Vibrations on mobile devices for tactile feel.
 
 ---
 
