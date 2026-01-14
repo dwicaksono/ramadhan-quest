@@ -14,8 +14,8 @@ export default defineConfig({
         name: 'Ramadan Quest',
         short_name: 'RamadanQuest',
         description: 'Aplikasi gamifikasi untuk menemani ibadah Ramadanmu',
-        theme_color: '#10b981',
-        background_color: '#f9fafb',
+        theme_color: '#84cc16',
+        background_color: '#050505',
         display: 'standalone',
         orientation: 'portrait',
         icons: [
