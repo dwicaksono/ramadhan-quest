@@ -2,25 +2,25 @@
 
 ![Ramadan Quest Logo](./public/app-icon.jpg)
 
-## 📊 Current Status (Week 4 In-Progress)
+## 📊 Current Status (Week 4 Completed)
 
-We have significantly enhanced the app with **Global Theming**, **Prayer Times Utility**, and **Settings Integration**.
+We have successfully refined the Home Page into a **"Super App" Dashboard**, integrating Ramadhan utilities directly into the game loop.
 
 ### ✅ Completed Features
 1.  **Immersive UI & Theming**
-    *   **Global Dark Mode:** Full support for "True Black" dark mode across all pages.
-    *   **Color Harmonization:** Unified app color scheme to **Lime Primary** (from Emerald/Green).
-    *   **Adaptive Components:** All cards and buttons adapt seamlessly to theme changes.
+    *   **Global Dark Mode:** Full support for "True Black" dark mode.
+    *   **Color Harmonization:** Unified app color scheme to **Lime Primary**.
+    *   **Live Elements:** Added **Prayer Countdown** (e.g., "Isya in 01:23:45") and **Floating XP** animations.
 
-2.  **Core Utilities (Prayer Times)**
-    *   **Adzan Engine:** Integrated `adhan` library for offline, accurate calculation.
-    *   **Smart Location:** Auto-detects GPS coordinates or falls back to Jakarta defaults.
-    *   **Methods:** Support for 10+ calculation standards (Kemenag, MWL, etc.).
+2.  **Ramadhan Utilities (Home Page)**
+    *   **Prayer Guide 📖:** Modal with Niat Puasa, Doa Berbuka, and Tarawih (Arabic + Latin).
+    *   **Sedekah Logger 🤝:** FAB with "Select & Confirm" chips to log charity.
+    *   **Smart Fasting Logic:** "Log Water" locked during fasting hours; unlocks at Maghrib.
 
-3.  **Settings & User Control**
-    *   **Profile Dashboard:** Added dedicated settings for Location and Calculation Methods.
-    *   **Notifications:** Implemented Web Notification permission request flow.
-    *   **Persistence:** All preferences saved to LocalStorage.
+3.  **Core Connectivity**
+    *   **Adzan Engine:** Integrated `adhan` library for accurate prayer times.
+    *   **GPS Detection:** Auto-detects user location for precise Jadwal Sholat.
+    *   **Settings:** Persistence for location and calculation methods.
 
 ---
 
@@ -38,9 +38,9 @@ To ensure the app feels authentic to the fasting experience, specific mechanics 
 
 ---
 
-## 🗺️ Next Steps: Week 5 (Gamification & Engagement)
+## 🗺️ Next Steps: Week 5 (Gamification Logic)
 
-The foundation is solid. Now we focus on keeping the user engaged long-term.
+The Home Page is polished. We now shift focus to **Core Game Loop** and **Progression** to make the app addictive.
 
 ### 1. Gamification Deep Dive
 *   [ ] **Leveling System:** Define XP thresholds (e.g., Level 1 -> 2 needs 100 XP).

@@ -20,8 +20,16 @@ onMounted(() => {
   detectLocation()
 })
 
-// Ramadan date calculation (Mock for now, typically needs Hijri library)
-const ramadanDay = computed(() => 12)
+// Ramadan Logic
+// MOCK: Set start date to 12 days ago so it always shows "Day 12" for the demo
+const RAMADAN_START_DATE = new Date()
+RAMADAN_START_DATE.setDate(RAMADAN_START_DATE.getDate() - 11) 
+
+const ramadhanDay = computed(() => {
+  const diffTime = Math.abs(now.value.getTime() - RAMADAN_START_DATE.getTime())
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+  return Math.min(diffDays, 30)
+})
 
 const greeting = computed(() => {
   const hour = now.value.getHours()
@@ -30,6 +38,24 @@ const greeting = computed(() => {
   if (hour < 15) return 'Selamat Siang'
   if (hour < 18) return 'Selamat Sore'
   return 'Selamat Berbuka'
+})
+
+// Countdown Logic
+const timeToNextPrayer = computed(() => {
+  if (!upcomingPrayer.value) return '00:00:00'
+  
+  // Force reactivity by dependent on 'now'
+  const current = now.value.getTime()
+  const target = new Date(upcomingPrayer.value.time).getTime()
+  const diff = target - current
+  
+  if (diff <= 0) return '00:00:00'
+  
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24).toString().padStart(2, '0')
+  const minutes = Math.floor((diff / (1000 * 60)) % 60).toString().padStart(2, '0')
+  const seconds = Math.floor((diff / 1000) % 60).toString().padStart(2, '0')
+  
+  return `${hours}:${minutes}:${seconds}`
 })
 </script>
 
@@ -87,7 +113,7 @@ const greeting = computed(() => {
         <div>
           <p class="text-[10px] text-primary-100 dark:text-orange-200/80 font-bold uppercase tracking-widest mb-1">RAMADAN DAY</p>
           <div class="flex items-baseline gap-1">
-            <span class="text-5xl font-bold tracking-tight text-white">{{ ramadanDay }}</span>
+            <span class="text-5xl font-bold tracking-tight text-white">{{ ramadhanDay }}</span>
             <span class="text-lg text-primary-200 dark:text-white/40 font-medium">/ 30</span>
           </div>
         </div>
@@ -95,9 +121,13 @@ const greeting = computed(() => {
         <!-- Right: Clock -->
         <div class="text-right">
           <p class="text-4xl font-bold tracking-tight text-white mb-1">{{ timeStr }}</p>
-          <div class="inline-flex items-center bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full px-3 py-1">
-            <span class="text-[10px] font-medium text-white truncate max-w-[100px]">
-              {{ upcomingPrayer ? `${upcomingPrayer.name} ${useDateFormat(upcomingPrayer.time, 'HH:mm').value}` : 'Loading...' }}
+          <div class="inline-flex items-center bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full px-3 py-1 gap-2">
+            <!-- Countdown Icon -->
+            <svg class="w-3 h-3 text-white/80 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-[10px] font-medium text-white truncate max-w-[150px]">
+              {{ upcomingPrayer ? `${upcomingPrayer.name} in ${timeToNextPrayer || '00:00:00'}` : 'Loading...' }}
             </span>
           </div>
         </div>

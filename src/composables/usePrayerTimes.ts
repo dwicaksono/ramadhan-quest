@@ -59,8 +59,17 @@ export function usePrayerTimes() {
     // const now = new Date()
     const next = times.value.nextPrayer()
     
-    // Adhan library returns 'none' if all prayers passed -> fallback to tomorrows Fajr
-    if (next === 'none') return { name: 'Subuh', time: times.value.fajr } 
+    // Adhan library returns 'none' if all prayers passed -> Get Tomorrow's Fajr
+    if (next === 'none') {
+      const tomorrow = new Date()
+      tomorrow.setDate(tomorrow.getDate() + 1)
+      const coordinates = new Coordinates(coords.value.lat, coords.value.lng)
+      const methodDef = PRAYER_METHODS.find(m => m.id === selectedMethodId.value) || PRAYER_METHODS[0]
+      const params = methodDef.method()
+      const tomorrowTimes = new PrayerTimes(coordinates, tomorrow, params)
+      
+      return { name: 'Subuh', time: tomorrowTimes.fajr }
+    }
 
     // Proper capitalization helper
     const map: Record<string, string> = {
