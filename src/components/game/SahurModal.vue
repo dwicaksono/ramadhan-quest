@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { BaseButton, BaseCard } from '@/components/base'
 import { useGameStore } from '@/stores/game'
 
-const props = defineProps<{
+defineProps<{
   modelValue: boolean
 }>()
 
