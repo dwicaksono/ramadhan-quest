@@ -22,6 +22,11 @@ const routes: RouteRecordRaw[] = [
     name: 'wallet',
     component: () => import('@/pages/Wallet.vue'),
   },
+  {
+    path: '/quran',
+    name: 'quran',
+    component: () => import('@/pages/QuranPage.vue'),
+  },
 
   {
     path: '/profil',

@@ -21,10 +21,10 @@ const eligibility = computed(() => checkHabitEligibility(props.habit))
 
 const categoryColor = computed(() => {
   switch (props.habit.category) {
-    case 'spiritual': return 'bg-primary-100 text-primary-700 border-primary-200'
-    case 'community': return 'bg-blue-100 text-blue-700 border-blue-200'
-    case 'personal': return 'bg-amber-100 text-amber-700 border-amber-200'
-    default: return 'bg-gray-100 text-gray-700 border-gray-200'
+    case 'spiritual': return 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-primary-200 dark:border-primary-800'
+    case 'community': return 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800'
+    case 'personal': return 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800'
+    default: return 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border-stone-200 dark:border-stone-700'
   }
 })
 
@@ -32,13 +32,13 @@ const iconBg = computed(() => {
   if (props.isCompleted) return 'bg-primary-500 text-white'
   
   // Locked state background
-  if (!eligibility.value.eligible) return 'bg-stone-200 text-stone-400'
+  if (!eligibility.value.eligible) return 'bg-stone-200 dark:bg-stone-800 text-stone-400 dark:text-stone-500'
 
   switch (props.habit.category) {
-    case 'spiritual': return 'bg-primary-200'
-    case 'community': return 'bg-blue-200'
-    case 'personal': return 'bg-amber-200'
-    default: return 'bg-gray-200'
+    case 'spiritual': return 'bg-primary-200 dark:bg-primary-800 dark:text-primary-100'
+    case 'community': return 'bg-blue-200 dark:bg-blue-800 dark:text-blue-100'
+    case 'personal': return 'bg-amber-200 dark:bg-amber-800 dark:text-amber-100'
+    default: return 'bg-stone-200 dark:bg-stone-800 dark:text-stone-300'
   }
 })
 
@@ -52,10 +52,10 @@ function handleClick(event: MouseEvent) {
     class="relative group rounded-xl p-3 border-2 transition-all duration-300 cursor-pointer overflow-hidden"
     :class="[
       isCompleted 
-        ? 'bg-primary-50 border-primary-200 shadow-inner opacity-70' 
+        ? 'bg-primary-50 dark:bg-primary-900/10 border-primary-200 dark:border-primary-800 shadow-inner opacity-70' 
         : !eligibility.eligible 
-          ? 'bg-stone-100 border-stone-200 opacity-60 grayscale cursor-not-allowed'
-          : 'bg-white border-b-4 border-stone-200 hover:border-primary-300 hover:-translate-y-0.5 shadow-sm'
+          ? 'bg-stone-100 dark:bg-stone-900/50 border-stone-200 dark:border-stone-800 opacity-60 grayscale cursor-not-allowed'
+          : 'bg-white dark:bg-stone-900 border-b-4 border-stone-200 dark:border-stone-800 hover:border-primary-300 dark:hover:border-primary-700 hover:-translate-y-0.5 shadow-sm'
     ]"
     @click="handleClick"
   >
@@ -72,7 +72,7 @@ function handleClick(event: MouseEvent) {
 
       <!-- Content -->
       <div class="flex-1">
-        <h3 class="font-bold text-stone-800" :class="{ 'line-through text-stone-500': isCompleted }">
+        <h3 class="font-bold text-stone-800 dark:text-stone-100" :class="{ 'line-through text-stone-500 dark:text-stone-500': isCompleted }">
           {{ habit.name }} 
           <span v-if="!eligibility.eligible && !isCompleted" class="text-xs font-normal text-stone-400 ml-1">(Belum Waktunya)</span>
         </h3>
@@ -88,7 +88,7 @@ function handleClick(event: MouseEvent) {
 
       <!-- Checkbox Circle Indicator -->
       <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors duration-300"
-        :class="isCompleted ? 'bg-primary-500 border-primary-500' : 'border-stone-300'"
+        :class="isCompleted ? 'bg-primary-500 border-primary-500' : 'border-stone-300 dark:border-stone-600'"
       >
         <div class="w-2.5 h-2.5 bg-white rounded-full transition-transform duration-300" 
           :class="isCompleted ? 'scale-100' : 'scale-0'"

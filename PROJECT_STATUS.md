@@ -44,7 +44,7 @@ The Home Page is polished. We now shift focus to **Core Game Loop** and **Progre
 
 ### 3. Content Expansion
 *   [ ] **More Habits:** Expand library for "Ramadhan" specific habits (Tarawih, Sedekah).
-*   [ ] **Quran Reading Tracker:** Simple counter for Juz/Halaman read.
+*   [x] **Quran Reading Tracker:** Simple counter for Juz/Halaman read.
 
 ### 3. Deployment & Release
 *   [ ] **Build Production:** Run final build command.

@@ -17,6 +17,10 @@ const { playSfx } = useAudio()
 const { showNotification, isEnabled: notificationEnabled } = useNotification()
 const now = useNow()
 
+// Initialize Dark Mode globally
+import { useDark } from '@vueuse/core'
+useDark()
+
 const showAdzan = ref(false)
 const adzanPrayerName = ref('')
 const lastTriggeredTime = ref('')

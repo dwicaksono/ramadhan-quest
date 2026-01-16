@@ -21,7 +21,8 @@ function getDefaultState(): GameState {
     settings: {
       soundEnabled: true,
       hapticsEnabled: true
-    }
+    },
+    lastAcknowledgedLevel: 1
   }
 }
 
@@ -29,7 +30,13 @@ function loadFromStorage(): GameState {
   const stored = localStorage.getItem(STORAGE_KEY)
   if (stored) {
     try {
-      return { ...getDefaultState(), ...JSON.parse(stored) }
+      const parsed = JSON.parse(stored)
+      return { 
+        ...getDefaultState(), 
+        ...parsed,
+        // CRITICAL FIX: Ensure modal is hidden on reload if level matches acknowledged
+        showLevelUpModal: parsed.level > (parsed.lastAcknowledgedLevel || 0) ? parsed.showLevelUpModal : false
+      }
     } catch {
       return getDefaultState()
     }
@@ -88,17 +95,26 @@ export const useGameStore = defineStore('game', () => {
 
   function checkLevelUp() {
     const nextThreshold = XP_THRESHOLDS[state.value.level + 1]
+    
+    // Check if enough XP for next level
     if (nextThreshold && state.value.xp >= nextThreshold) {
       state.value.level++
       state.value.mood = 'excited'
-      state.value.showLevelUpModal = true
+      
+      // Only show modal if this level hasn't been acknowledged yet
+      // This might be redundant if we just check logic, but safest for UX
+      state.value.showLevelUpModal = true 
+      
       // Excited for 1 hour
       state.value.excitedUntil = Date.now() + (60 * 60 * 1000)
     }
   }
 
   function closeLevelUpModal() {
+    // When closing, acknowledge the current level
+    state.value.lastAcknowledgedLevel = state.value.level
     state.value.showLevelUpModal = false
+    saveToStorage()
   }
 
   function updateMood() {
