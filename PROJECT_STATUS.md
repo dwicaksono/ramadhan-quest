@@ -19,22 +19,13 @@ We have successfully refined the Home Page into a **"Super App" Dashboard**, int
 
 3.  **Core Connectivity**
     *   **Adzan Engine:** Integrated `adhan` library for accurate prayer times.
+    *   **Global Notifications:** Native Adzan alerts even when app is in background.
     *   **GPS Detection:** Auto-detects user location for precise Jadwal Sholat.
     *   **Settings:** Persistence for location and calculation methods.
 
----
-
-## 🎮 Game Mechanics & Context (The "Ramadhan" Logic)
-
-To ensure the app feels authentic to the fasting experience, specific mechanics apply:
-
-### 1. Hydration Logic (The 2-4-2 Rule)
-*   **Context:** Muslims fast (no food/drink) from **Subuh** to **Maghrib**.
-*   **Mechanic:** The "Log Water" feature is **LOCKED** during the day (Fasting Hours).
-*   **Goal:** Users must drink 8 glasses during the **Open Window** (Maghrib to Subuh).
-    *   Start: Maghrib (Iftar) - 2 Glasses.
-    *   Night: Tarawih/Night - 4 Glasses.
-    *   End: Subuh (Sahur) - 2 Glasses.
+4.  **Quest Validation 🛡️**
+    *   **Time-Based Locking:** Prayer quests (e.g., Isya) are locked until the specific prayer time (native validation).
+    *   **Anti-Cheat UI:** Visual indicators (Lock Icon + "Belum Waktunya") prevent premature completion.
 
 ---
 
@@ -45,11 +36,15 @@ The Home Page is polished. We now shift focus to **Core Game Loop** and **Progre
 ### 1. Gamification Deep Dive
 *   [x] **Leveling System:** Define XP thresholds (e.g., Level 1 -> 2 needs 100 XP).
 *   [x] **Badges/Achievements:** Visual rewards for milestones (e.g., "7 Day Streak", "Donator").
-*   [ ] **Leaderboard (Mock):** Simple friend ranking to encourage competition.
+*   [ ] **Challenge Mode:** "Khatam Quran 30 Juz" community challenge.
 
-### 2. Content Expansion
+### 2. Social & Backend (Deferred - Phase 2)
+*   [ ] **Leaderboard:** Requires backend server (Postponed for Offline-First focus).
+*   [ ] **Cloud Sync:** Backup game data.
+
+### 3. Content Expansion
 *   [ ] **More Habits:** Expand library for "Ramadhan" specific habits (Tarawih, Sedekah).
-*   [ ] **Quran Reading Tracker:** Simple counter for Juz/Halaman read.
+*   [x] **Quran Reading Tracker:** Simple counter for Juz/Halaman read.
 
 ### 3. Deployment & Release
 *   [ ] **Build Production:** Run final build command.

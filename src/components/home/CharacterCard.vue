@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useGameStore } from '@/stores/game'
+import { BaseCard } from '@/components/base'
 
 
 const gameStore = useGameStore()
@@ -58,7 +59,7 @@ function triggerBounce() {
 </script>
 
 <template>
-  <div class="bg-white dark:bg-[#151921] text-secondary-900 dark:text-white rounded-[2rem] p-6 relative overflow-hidden shadow-xl border border-stone-100 dark:border-white/5 group">
+  <BaseCard variant="default" :rounded="'2xl'" class="relative overflow-hidden shadow-xl group">
     <!-- Texture Overlay (Dark Mode Only) -->
     <div class="absolute inset-0 pattern-arabesque opacity-5 pointer-events-none hidden dark:block"></div>
 
@@ -139,7 +140,7 @@ function triggerBounce() {
         </Transition>
       </div>
     </div>
-  </div>
+  </BaseCard>
 </template>
 
 <style scoped>

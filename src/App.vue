@@ -5,23 +5,56 @@ import { useNow, useDateFormat } from '@vueuse/core'
 import { useGameStore } from '@/stores/game'
 import { usePrayerTimes } from '@/composables/usePrayerTimes'
 import { useAudio } from '@/composables/useAudio'
+import { useNotification } from '@/composables/useNotification'
 import { Toaster } from 'vue-sonner'
 import BottomNav from '@/components/navigation/BottomNav.vue'
 import LevelUpModal from '@/components/game/LevelUpModal.vue'
 import AdzanModal from '@/components/home/AdzanModal.vue'
+import SahurModal from '@/components/game/SahurModal.vue'
 
 const gameStore = useGameStore()
 const { formattedTimes } = usePrayerTimes()
 const { playSfx } = useAudio()
+const { showNotification, isEnabled: notificationEnabled } = useNotification()
 const now = useNow()
+
+// Initialize Dark Mode globally
+import { useDark } from '@vueuse/core'
+useDark()
 
 const showAdzan = ref(false)
 const adzanPrayerName = ref('')
 const lastTriggeredTime = ref('')
 
+// Sahur Logic
+const showSahur = ref(false)
+const { times } = usePrayerTimes()
+
 onMounted(() => {
   gameStore.checkDailyLogin()
+  checkSahurWindow()
 })
+
+function checkSahurWindow() {
+  if (!times.value) return
+
+  const nowVal = new Date()
+  const subuh = times.value.fajr
+  
+  // Calculate Window: Subuh - 90 mins
+  const sahurStart = new Date(subuh)
+  sahurStart.setTime(sahurStart.getTime() - (90 * 60 * 1000))
+
+  // If we are currently in the sahur window
+  if (nowVal >= sahurStart && nowVal < subuh) {
+    // Attempt to log sahur. Returns true if successful (first time today)
+    const success = gameStore.logSahur()
+    if (success) {
+      showSahur.value = true
+      playSfx('success') // Reuse existing sound or 'levelup'
+    }
+  }
+}
 
 // Global Adzan Trigger
 watch(now, () => {
@@ -55,13 +88,26 @@ function triggerAdzan(prayerKey: string) {
     isya: 'Isya'
   }
   
-  adzanPrayerName.value = map[prayerKey]
+  const prayerName = map[prayerKey]
+  adzanPrayerName.value = prayerName
   showAdzan.value = true
   playSfx('levelup') // Placeholder for "Chime"
   
+  // Send native browser notification (works when app is in background tab)
+  if (notificationEnabled.value) {
+    const body = prayerKey === 'maghrib' 
+      ? 'Waktunya berbuka puasa! Selamat menunaikan ibadah sholat Maghrib 🌙' 
+      : `Selamat menunaikan ibadah sholat ${prayerName}`
+    
+    showNotification(`🕌 Adzan ${prayerName}`, {
+      body,
+      icon: '/pwa-192x192.png',
+      tag: `adzan-${prayerKey}`
+    })
+  }
+  
   // Specific logic for Maghrib (Unlock Water)
   if (prayerKey === 'maghrib') {
-    // Ideally we might want to auto-unlock water here or just let the user know
     console.log('Maghrib time! Water unlocked.')
   }
 }
@@ -78,6 +124,7 @@ function triggerAdzan(prayerKey: string) {
       v-model="showAdzan"
       :prayer-name="adzanPrayerName"
     />
+    <SahurModal v-model="showSahur" />
     <Toaster position="top-center" richColors />
 
     <!-- Bottom navigation -->

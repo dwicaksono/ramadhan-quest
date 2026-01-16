@@ -3,9 +3,12 @@ import { ref, computed } from 'vue'
 import { useHabitStore } from '@/stores/habit'
 import { useHabitActions } from '@/composables/useHabitActions'
 import HabitList from '@/components/habits/HabitList.vue'
+import { BaseHeader } from '@/components/base'
 import { useTransition, TransitionPresets } from '@vueuse/core'
 import { useAudio } from '@/composables/useAudio'
 import { useHaptics } from '@/composables/useHaptics'
+
+import { toast } from 'vue-sonner'
 
 const habitStore = useHabitStore()
 const { toggleHabit } = useHabitActions()
@@ -39,16 +42,21 @@ const xpAnimKey = ref(0) // Force re-render for same-location clicks
 function handleToggle(id: string, event: MouseEvent) {
   const result = toggleHabit(id)
   
-  if (result.success) {
-    if (result.isCompleted) {
-      triggerXpAnimation(result.xpEarned, event.clientX, event.clientY)
-      // Play full success feedback
-      playSfx('success')
-      trigger('medium')
-    } else {
-      // Light feedback for unchecking
-      trigger('light')
+  if (!result.success) {
+    if (result.message) {
+      toast.error(result.message)
     }
+    return
+  }
+
+  if (result.isCompleted) {
+    triggerXpAnimation(result.xpEarned, event.clientX, event.clientY)
+    // Play full success feedback
+    playSfx('success')
+    trigger('medium')
+  } else {
+    // Light feedback for unchecking
+    trigger('light')
   }
 }
 
@@ -76,9 +84,10 @@ const animatedProgress = useTransition(progressSource, {
 <template>
   <div class="px-4 pt-6 pb-24 max-w-md mx-auto min-h-screen bg-stone-50 dark:bg-secondary-950 transition-colors duration-200">
     <!-- Header -->
-    <header class="mb-6">
-      <h1 class="text-2xl font-bold text-primary-800 dark:text-primary-400">Target Harian</h1>
-      <p class="text-stone-500 dark:text-stone-400 text-sm">Jaga semangat ibadahmu!</p>
+    <BaseHeader 
+      title="Target Harian" 
+      subtitle="Jaga semangat ibadahmu!"
+    />
       
       <!-- Daily Progress Card -->
       <div class="mt-4 bg-gradient-to-r from-primary-600 to-primary-500 rounded-2xl p-4 text-white shadow-lg relative overflow-hidden">
@@ -104,7 +113,6 @@ const animatedProgress = useTransition(progressSource, {
           ></div>
         </div>
       </div>
-    </header>
 
     <!-- Tabs -->
     <div class="sticky top-0 z-20 bg-stone-50/95 dark:bg-secondary-950/95 backdrop-blur-sm py-2 -mx-4 px-4 border-b border-stone-200/50 dark:border-secondary-800 mb-4 overflow-x-auto no-scrollbar scroll-smooth">

@@ -12,10 +12,13 @@ export interface GameState {
   lastActiveDate: string
   streak: number
   showLevelUpModal?: boolean
+  lastAcknowledgedLevel: number // Track which level usage has seen
   excitedUntil?: number
   startedAt?: string // Date when user starter playing
   waterLog: number // Daily water glasses drunk
   sadaqahTotal: number
+  sahurStreak?: number
+  lastSahurLog?: string // Date YYYY-MM-DD
   settings: {
     soundEnabled: boolean
     hapticsEnabled: boolean

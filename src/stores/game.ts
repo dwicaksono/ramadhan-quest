@@ -18,10 +18,13 @@ function getDefaultState(): GameState {
     showLevelUpModal: false,
     waterLog: 0,
     sadaqahTotal: 0,
+    sahurStreak: 0,
+    lastSahurLog: '',
     settings: {
       soundEnabled: true,
       hapticsEnabled: true
-    }
+    },
+    lastAcknowledgedLevel: 1
   }
 }
 
@@ -29,7 +32,13 @@ function loadFromStorage(): GameState {
   const stored = localStorage.getItem(STORAGE_KEY)
   if (stored) {
     try {
-      return { ...getDefaultState(), ...JSON.parse(stored) }
+      const parsed = JSON.parse(stored)
+      return { 
+        ...getDefaultState(), 
+        ...parsed,
+        // CRITICAL FIX: Ensure modal is hidden on reload if level matches acknowledged
+        showLevelUpModal: parsed.level > (parsed.lastAcknowledgedLevel || 0) ? parsed.showLevelUpModal : false
+      }
     } catch {
       return getDefaultState()
     }
@@ -88,17 +97,26 @@ export const useGameStore = defineStore('game', () => {
 
   function checkLevelUp() {
     const nextThreshold = XP_THRESHOLDS[state.value.level + 1]
+    
+    // Check if enough XP for next level
     if (nextThreshold && state.value.xp >= nextThreshold) {
       state.value.level++
       state.value.mood = 'excited'
-      state.value.showLevelUpModal = true
+      
+      // Only show modal if this level hasn't been acknowledged yet
+      // This might be redundant if we just check logic, but safest for UX
+      state.value.showLevelUpModal = true 
+      
       // Excited for 1 hour
       state.value.excitedUntil = Date.now() + (60 * 60 * 1000)
     }
   }
 
   function closeLevelUpModal() {
+    // When closing, acknowledge the current level
+    state.value.lastAcknowledgedLevel = state.value.level
     state.value.showLevelUpModal = false
+    saveToStorage()
   }
 
   function updateMood() {
@@ -184,6 +202,38 @@ export const useGameStore = defineStore('game', () => {
     return state.value.sadaqahTotal
   }
 
+  function logSahur() {
+    const today = new Date().toISOString().split('T')[0]
+    
+    // Prevent multiple logs per day
+    if (state.value.lastSahurLog === today) {
+      return false
+    }
+
+    // Check Streak Logic
+    const yesterday = new Date()
+    yesterday.setDate(yesterday.getDate() - 1)
+    const yesterdayStr = yesterday.toISOString().split('T')[0]
+
+    if (state.value.lastSahurLog === yesterdayStr) {
+      state.value.sahurStreak = (state.value.sahurStreak || 0) + 1
+    } else {
+      state.value.sahurStreak = 1
+    }
+
+    state.value.lastSahurLog = today // Mark as done for today
+    
+    // Grant Rewards
+    addXP(50) // Big bonus for waking up early
+    addEnergy(100) // Full energy refill
+    setMood('excited') // Character is happy!
+    
+    state.value.excitedUntil = Date.now() + (30 * 60 * 1000) // Excited for 30 mins
+
+    saveToStorage()
+    return true
+  }
+
   return {
     // State
     state,
@@ -204,5 +254,6 @@ export const useGameStore = defineStore('game', () => {
     toggleHaptics,
     logWater,
     logSadaqah,
+    logSahur,
   }
 })

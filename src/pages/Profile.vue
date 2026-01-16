@@ -5,6 +5,7 @@ import { useLeveling } from '@/composables/useLeveling'
 import { BaseCard, BaseButton, BaseProgress } from '@/components/base'
 import TrophyRoom from '@/components/profile/TrophyRoom.vue'
 import { usePrayerTimes } from '@/composables/usePrayerTimes'
+import { useNotification } from '@/composables/useNotification'
 import { useStorage } from '@vueuse/core'
 
 import { toast } from 'vue-sonner'
@@ -27,31 +28,35 @@ const {
   // setLocation
 } = usePrayerTimes()
 
+// Notification Settings
+const { 
+  notificationPermission, 
+  notificationEnabled, 
+  requestPermission,
+  isSupported: notificationSupported
+} = useNotification()
+
 // We need direct access to coords for display only, but usePrayerTimes manages it
 const coords = useStorage('rq-user-coords', { lat: 0, lng: 0 }) 
 
 const manualLocationName = ref(locationName.value)
-const notificationsEnabled = ref(false)
 
-function checkNotificationStatus() {
-  if (!('Notification' in window)) return
-  notificationsEnabled.value = Notification.permission === 'granted'
-}
-
-async function requestNotification() {
-  if (!('Notification' in window)) {
-    toast.error('Browser tidak mendukung notifikasi')
-    return
-  }
-
-  const permission = await Notification.requestPermission()
-  notificationsEnabled.value = permission === 'granted'
-  
-  if (permission === 'granted') {
-    toast.success('Notifikasi Adzan diaktifkan! 🔔')
-    new Notification('Ramadhan Quest', { body: 'Notifikasi aktif. Selamat beribadah!' })
+async function handleNotificationToggle() {
+  if (notificationPermission.value !== 'granted') {
+    const granted = await requestPermission()
+    if (granted) {
+      toast.success('Notifikasi Adzan diaktifkan! 🔔')
+    } else {
+      toast.error('Izin notifikasi ditolak')
+    }
   } else {
-    toast.error('Izin notifikasi ditolak')
+    // Toggle the preference
+    notificationEnabled.value = !notificationEnabled.value
+    if (notificationEnabled.value) {
+      toast.success('Notifikasi Adzan diaktifkan')
+    } else {
+      toast.info('Notifikasi Adzan dinonaktifkan')
+    }
   }
 }
 
@@ -73,7 +78,7 @@ function saveName() {
 }
 
 onMounted(() => {
-  checkNotificationStatus()
+  // Notification status is now reactive from composable
 })
 
 function handleExport() {
@@ -271,7 +276,7 @@ function handleReset() {
         </div>
 
         <!-- Notification Permission -->
-        <div class="flex items-center justify-between pt-2">
+        <div v-if="notificationSupported" class="flex items-center justify-between pt-2">
            <div class="flex items-center gap-3">
             <div class="w-8 h-8 rounded-full bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
               🔔
@@ -282,13 +287,13 @@ function handleReset() {
             </div>
           </div>
           <button 
-            @click="requestNotification"
+            @click="handleNotificationToggle"
             class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-secondary-800"
-            :class="notificationsEnabled ? 'bg-primary-600' : 'bg-gray-200 dark:bg-secondary-700'"
+            :class="notificationEnabled ? 'bg-primary-600' : 'bg-gray-200 dark:bg-secondary-700'"
           >
             <span
               class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform"
-              :class="notificationsEnabled ? 'translate-x-6' : 'translate-x-1'"
+              :class="notificationEnabled ? 'translate-x-6' : 'translate-x-1'"
             />
           </button>
         </div>
