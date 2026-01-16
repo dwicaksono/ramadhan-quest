@@ -7,6 +7,8 @@ import { useTransition, TransitionPresets } from '@vueuse/core'
 import { useAudio } from '@/composables/useAudio'
 import { useHaptics } from '@/composables/useHaptics'
 
+import { toast } from 'vue-sonner'
+
 const habitStore = useHabitStore()
 const { toggleHabit } = useHabitActions()
 const { playSfx } = useAudio()
@@ -39,16 +41,21 @@ const xpAnimKey = ref(0) // Force re-render for same-location clicks
 function handleToggle(id: string, event: MouseEvent) {
   const result = toggleHabit(id)
   
-  if (result.success) {
-    if (result.isCompleted) {
-      triggerXpAnimation(result.xpEarned, event.clientX, event.clientY)
-      // Play full success feedback
-      playSfx('success')
-      trigger('medium')
-    } else {
-      // Light feedback for unchecking
-      trigger('light')
+  if (!result.success) {
+    if (result.message) {
+      toast.error(result.message)
     }
+    return
+  }
+
+  if (result.isCompleted) {
+    triggerXpAnimation(result.xpEarned, event.clientX, event.clientY)
+    // Play full success feedback
+    playSfx('success')
+    trigger('medium')
+  } else {
+    // Light feedback for unchecking
+    trigger('light')
   }
 }
 

@@ -6,7 +6,6 @@ import { BaseCard } from '@/components/base'
 const { allBadges, checkBadges, unlockedCount } = useBadges()
 
 onMounted(() => {
-  // Check badges on mount (e.g. for First Step, Streak, etc)
   checkBadges()
 })
 </script>

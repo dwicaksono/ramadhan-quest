@@ -5,6 +5,7 @@ export interface HabitItem {
   category: 'spiritual' | 'community' | 'personal'
   icon: string
   xpReward: number
+  prayerTimeKey?: string // 'subuh', 'dzuhur', etc.
 }
 
 // Habit state interface
@@ -16,11 +17,11 @@ export interface HabitState {
 
 // Default habits for Ramadan
 export const DEFAULT_HABITS: HabitItem[] = [
-  { id: 'fajr', name: 'Sholat Subuh', category: 'spiritual', icon: '🕌', xpReward: 15 },
-  { id: 'dhuhr', name: 'Sholat Dzuhur', category: 'spiritual', icon: '🕌', xpReward: 10 },
-  { id: 'asr', name: 'Sholat Ashar', category: 'spiritual', icon: '🕌', xpReward: 10 },
-  { id: 'maghrib', name: 'Sholat Maghrib', category: 'spiritual', icon: '🕌', xpReward: 10 },
-  { id: 'isha', name: 'Sholat Isya', category: 'spiritual', icon: '🕌', xpReward: 10 },
+  { id: 'fajr', name: 'Sholat Subuh', category: 'spiritual', icon: '🕌', xpReward: 15, prayerTimeKey: 'subuh' },
+  { id: 'dhuhr', name: 'Sholat Dzuhur', category: 'spiritual', icon: '🕌', xpReward: 10, prayerTimeKey: 'dzuhur' },
+  { id: 'asr', name: 'Sholat Ashar', category: 'spiritual', icon: '🕌', xpReward: 10, prayerTimeKey: 'ashar' },
+  { id: 'maghrib', name: 'Sholat Maghrib', category: 'spiritual', icon: '🕌', xpReward: 10, prayerTimeKey: 'maghrib' },
+  { id: 'isha', name: 'Sholat Isya', category: 'spiritual', icon: '🕌', xpReward: 10, prayerTimeKey: 'isya' },
   { id: 'quran', name: 'Baca Quran 5 Halaman', category: 'spiritual', icon: '📖', xpReward: 20 },
   { id: 'adhkar', name: 'Dzikir Pagi', category: 'spiritual', icon: '🤲', xpReward: 10 },
   { id: 'sadaqah', name: 'Sedekah Hari Ini', category: 'community', icon: '💝', xpReward: 25 },

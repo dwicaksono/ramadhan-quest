@@ -78,6 +78,7 @@ We use a **Lime** primary palette for a fresh, energetic Islamic feel, paired wi
 ### Working Principles
 1.  **Mobile First**: Always assume the user is on a phone.
 2.  **Offline First**: Prefer local logic (Adhan lib) over APIs.
+    *   **NO BACKEND**: This is a single-player experience. Do not implement features requiring a server (e.g., Leaderboards) unless strictly requested as a Phase 2 item.
 3.  **Strict Typing**: No `any`. Use interfaces in `src/types/`.
 
 ### Recommended MCPs

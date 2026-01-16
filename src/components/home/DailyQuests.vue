@@ -2,12 +2,13 @@
 import { computed, ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useHabitStore } from '@/stores/habit'
-import { useGame } from '@/composables/useGame'
-
+import { useHabitActions } from '@/composables/useHabitActions'
+import { toast } from 'vue-sonner'
 
 const router = useRouter()
 const habitStore = useHabitStore()
-const { completeHabit } = useGame()
+// const { completeHabit } = useGame() -- Removed unused variable
+const { toggleHabit: toggleHabitAction, checkHabitEligibility } = useHabitActions()
 
 const isLoading = ref(true)
 const displayedHabits = computed(() => habitStore.todaysHabits.slice(0, 3))
@@ -20,7 +21,14 @@ onMounted(() => {
 })
 
 function toggleHabit(habitId: string) {
-  completeHabit(habitId)
+  const result = toggleHabitAction(habitId)
+  
+  if (!result.success) {
+    if (result.message) {
+      toast.error(result.message)
+    }
+    return
+  }
 }
 
 function navigateToHabits() {
@@ -57,23 +65,40 @@ function navigateToHabits() {
       <div
         v-for="habit in displayedHabits"
         :key="habit.id"
-        class="flex items-center justify-between py-3 px-2 -mx-2 rounded-xl transition-colors hover:bg-stone-50 dark:hover:bg-white/5 cursor-pointer group"
+        class="flex items-center justify-between py-3 px-2 -mx-2 rounded-xl transition-colors cursor-pointer group relative"
+        :class="[
+          checkHabitEligibility(habit).eligible 
+            ? 'hover:bg-stone-50 dark:hover:bg-white/5' 
+            : 'opacity-60 cursor-not-allowed grayscale'
+        ]"
         @click="toggleHabit(habit.id)"
       >
         <div class="flex items-center gap-4">
           <!-- Custom Check Circle -->
           <div 
-            class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300"
-            :class="habit.isCompleted ? 'bg-primary-500 text-white' : 'bg-stone-100 dark:bg-white/10 text-transparent border-2 border-stone-300 dark:border-white/20 group-hover:border-stone-400 dark:group-hover:border-white/40'"
+            class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 relative z-10"
+            :class="[
+              habit.isCompleted ? 'bg-primary-500 text-white' : 
+              checkHabitEligibility(habit).eligible 
+                ? 'bg-stone-100 dark:bg-white/10 text-transparent border-2 border-stone-300 dark:border-white/20 group-hover:border-stone-400 dark:group-hover:border-white/40'
+                : 'bg-stone-200 dark:bg-white/5 text-stone-400 border-2 border-stone-200 dark:border-white/10'
+            ]"
           >
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Lock Icon for invalid time -->
+            <svg v-if="!checkHabitEligibility(habit).eligible && !habit.isCompleted" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            <!-- Check Icon -->
+            <svg v-else class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
             </svg>
           </div>
           
           <div>
-            <p class="font-medium text-secondary-900 dark:text-white text-base leading-tight mb-0.5" :class="{ 'line-through text-stone-400 dark:text-white/40': habit.isCompleted }">
-              {{ habit.name }}
+            <p class="font-medium text-secondary-900 dark:text-white text-base leading-tight mb-0.5" 
+               :class="{ 'line-through text-stone-400 dark:text-white/40': habit.isCompleted }"
+            >
+              {{ habit.name }}<span v-if="!checkHabitEligibility(habit).eligible && !habit.isCompleted" class="text-xs font-normal text-stone-400 ml-2">(Belum Waktunya)</span>
             </p>
             <div class="flex items-center gap-1.5 text-xs text-stone-500 dark:text-stone-400">
               <span v-if="habit.category === 'spiritual'">⚙️ Spiritual</span>

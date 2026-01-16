@@ -2,6 +2,8 @@
 import { computed } from 'vue'
 import type { HabitItem } from '@/types/habit'
 
+import { useHabitActions } from '@/composables/useHabitActions'
+
 interface Props {
   habit: HabitItem
   isCompleted: boolean
@@ -9,9 +11,13 @@ interface Props {
 
 const props = defineProps<Props>()
 
+const { checkHabitEligibility } = useHabitActions()
+
 const emit = defineEmits<{
   (e: 'toggle', id: string, event: MouseEvent): void
 }>()
+
+const eligibility = computed(() => checkHabitEligibility(props.habit))
 
 const categoryColor = computed(() => {
   switch (props.habit.category) {
@@ -25,6 +31,9 @@ const categoryColor = computed(() => {
 const iconBg = computed(() => {
   if (props.isCompleted) return 'bg-primary-500 text-white'
   
+  // Locked state background
+  if (!eligibility.value.eligible) return 'bg-stone-200 text-stone-400'
+
   switch (props.habit.category) {
     case 'spiritual': return 'bg-primary-200'
     case 'community': return 'bg-blue-200'
@@ -44,7 +53,9 @@ function handleClick(event: MouseEvent) {
     :class="[
       isCompleted 
         ? 'bg-primary-50 border-primary-200 shadow-inner opacity-70' 
-        : 'bg-white border-b-4 border-stone-200 hover:border-primary-300 hover:-translate-y-0.5 shadow-sm'
+        : !eligibility.eligible 
+          ? 'bg-stone-100 border-stone-200 opacity-60 grayscale cursor-not-allowed'
+          : 'bg-white border-b-4 border-stone-200 hover:border-primary-300 hover:-translate-y-0.5 shadow-sm'
     ]"
     @click="handleClick"
   >
@@ -54,14 +65,16 @@ function handleClick(event: MouseEvent) {
         class="w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all duration-500"
         :class="iconBg"
       >
-        <span v-if="!isCompleted">{{ habit.icon }}</span>
+        <span v-if="!eligibility.eligible && !isCompleted">🔒</span>
+        <span v-else-if="!isCompleted">{{ habit.icon }}</span>
         <span v-else class="text-white text-2xl">✓</span>
       </div>
 
       <!-- Content -->
       <div class="flex-1">
         <h3 class="font-bold text-stone-800" :class="{ 'line-through text-stone-500': isCompleted }">
-          {{ habit.name }}
+          {{ habit.name }} 
+          <span v-if="!eligibility.eligible && !isCompleted" class="text-xs font-normal text-stone-400 ml-1">(Belum Waktunya)</span>
         </h3>
         <div class="flex items-center gap-2 mt-1">
           <span class="text-xs px-2 py-0.5 rounded-full font-medium" :class="categoryColor">

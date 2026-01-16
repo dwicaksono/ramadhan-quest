@@ -5,6 +5,7 @@ import { useNow, useDateFormat } from '@vueuse/core'
 import { useGameStore } from '@/stores/game'
 import { usePrayerTimes } from '@/composables/usePrayerTimes'
 import { useAudio } from '@/composables/useAudio'
+import { useNotification } from '@/composables/useNotification'
 import { Toaster } from 'vue-sonner'
 import BottomNav from '@/components/navigation/BottomNav.vue'
 import LevelUpModal from '@/components/game/LevelUpModal.vue'
@@ -13,6 +14,7 @@ import AdzanModal from '@/components/home/AdzanModal.vue'
 const gameStore = useGameStore()
 const { formattedTimes } = usePrayerTimes()
 const { playSfx } = useAudio()
+const { showNotification, isEnabled: notificationEnabled } = useNotification()
 const now = useNow()
 
 const showAdzan = ref(false)
@@ -55,13 +57,26 @@ function triggerAdzan(prayerKey: string) {
     isya: 'Isya'
   }
   
-  adzanPrayerName.value = map[prayerKey]
+  const prayerName = map[prayerKey]
+  adzanPrayerName.value = prayerName
   showAdzan.value = true
   playSfx('levelup') // Placeholder for "Chime"
   
+  // Send native browser notification (works when app is in background tab)
+  if (notificationEnabled.value) {
+    const body = prayerKey === 'maghrib' 
+      ? 'Waktunya berbuka puasa! Selamat menunaikan ibadah sholat Maghrib 🌙' 
+      : `Selamat menunaikan ibadah sholat ${prayerName}`
+    
+    showNotification(`🕌 Adzan ${prayerName}`, {
+      body,
+      icon: '/pwa-192x192.png',
+      tag: `adzan-${prayerKey}`
+    })
+  }
+  
   // Specific logic for Maghrib (Unlock Water)
   if (prayerKey === 'maghrib') {
-    // Ideally we might want to auto-unlock water here or just let the user know
     console.log('Maghrib time! Water unlocked.')
   }
 }
