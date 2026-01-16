@@ -18,6 +18,8 @@ function getDefaultState(): GameState {
     showLevelUpModal: false,
     waterLog: 0,
     sadaqahTotal: 0,
+    sahurStreak: 0,
+    lastSahurLog: '',
     settings: {
       soundEnabled: true,
       hapticsEnabled: true
@@ -200,6 +202,38 @@ export const useGameStore = defineStore('game', () => {
     return state.value.sadaqahTotal
   }
 
+  function logSahur() {
+    const today = new Date().toISOString().split('T')[0]
+    
+    // Prevent multiple logs per day
+    if (state.value.lastSahurLog === today) {
+      return false
+    }
+
+    // Check Streak Logic
+    const yesterday = new Date()
+    yesterday.setDate(yesterday.getDate() - 1)
+    const yesterdayStr = yesterday.toISOString().split('T')[0]
+
+    if (state.value.lastSahurLog === yesterdayStr) {
+      state.value.sahurStreak = (state.value.sahurStreak || 0) + 1
+    } else {
+      state.value.sahurStreak = 1
+    }
+
+    state.value.lastSahurLog = today // Mark as done for today
+    
+    // Grant Rewards
+    addXP(50) // Big bonus for waking up early
+    addEnergy(100) // Full energy refill
+    setMood('excited') // Character is happy!
+    
+    state.value.excitedUntil = Date.now() + (30 * 60 * 1000) // Excited for 30 mins
+
+    saveToStorage()
+    return true
+  }
+
   return {
     // State
     state,
@@ -220,5 +254,6 @@ export const useGameStore = defineStore('game', () => {
     toggleHaptics,
     logWater,
     logSadaqah,
+    logSahur,
   }
 })

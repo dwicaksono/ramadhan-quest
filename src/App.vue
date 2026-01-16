@@ -10,6 +10,7 @@ import { Toaster } from 'vue-sonner'
 import BottomNav from '@/components/navigation/BottomNav.vue'
 import LevelUpModal from '@/components/game/LevelUpModal.vue'
 import AdzanModal from '@/components/home/AdzanModal.vue'
+import SahurModal from '@/components/game/SahurModal.vue'
 
 const gameStore = useGameStore()
 const { formattedTimes } = usePrayerTimes()
@@ -25,9 +26,35 @@ const showAdzan = ref(false)
 const adzanPrayerName = ref('')
 const lastTriggeredTime = ref('')
 
+// Sahur Logic
+const showSahur = ref(false)
+const { times } = usePrayerTimes()
+
 onMounted(() => {
   gameStore.checkDailyLogin()
+  checkSahurWindow()
 })
+
+function checkSahurWindow() {
+  if (!times.value) return
+
+  const nowVal = new Date()
+  const subuh = times.value.fajr
+  
+  // Calculate Window: Subuh - 90 mins
+  const sahurStart = new Date(subuh)
+  sahurStart.setTime(sahurStart.getTime() - (90 * 60 * 1000))
+
+  // If we are currently in the sahur window
+  if (nowVal >= sahurStart && nowVal < subuh) {
+    // Attempt to log sahur. Returns true if successful (first time today)
+    const success = gameStore.logSahur()
+    if (success) {
+      showSahur.value = true
+      playSfx('success') // Reuse existing sound or 'levelup'
+    }
+  }
+}
 
 // Global Adzan Trigger
 watch(now, () => {
@@ -97,6 +124,7 @@ function triggerAdzan(prayerKey: string) {
       v-model="showAdzan"
       :prayer-name="adzanPrayerName"
     />
+    <SahurModal v-model="showSahur" />
     <Toaster position="top-center" richColors />
 
     <!-- Bottom navigation -->

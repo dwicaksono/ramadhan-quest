@@ -17,6 +17,8 @@ export interface GameState {
   startedAt?: string // Date when user starter playing
   waterLog: number // Daily water glasses drunk
   sadaqahTotal: number
+  sahurStreak?: number
+  lastSahurLog?: string // Date YYYY-MM-DD
   settings: {
     soundEnabled: boolean
     hapticsEnabled: boolean
