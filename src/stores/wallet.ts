@@ -79,7 +79,7 @@ export const useWalletStore = defineStore('wallet', () => {
     }
   }
 
-  function getDenominations(amount: number): Denomination[] {
+  function getDenominations(amount: number, mode: 'efficient' | 'distribute' = 'efficient'): Denomination[] {
     const denomValues = [100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100]
     const denomLabels: Record<number, string> = {
       100000: 'Rp 100.000',
@@ -97,15 +97,54 @@ export const useWalletStore = defineStore('wallet', () => {
     const result: Denomination[] = []
     let remaining = amount
 
-    for (const value of denomValues) {
-      const count = Math.floor(remaining / value)
-      if (count > 0) {
-        result.push({ value, count, label: denomLabels[value] })
-        remaining -= count * value
+    // Strategy Logic
+    if (mode === 'distribute') {
+      // "Eceran" Mode: Try to ensure we have smaller bills for THR
+      // Reserve 40% of budget for smaller bills (< 50k) if possible
+      const reserveForSmall = Math.min(remaining * 0.4, 1000000) // Cap reserve at 1jt
+      let mainBudget = remaining - reserveForSmall
+      
+      // Pass 1: Efficiently break the main budget (Big bills)
+      for (const value of denomValues) {
+        if (value < 20000) continue // Stop at 20k, handle rest later
+        const count = Math.floor(mainBudget / value)
+        if (count > 0) {
+          result.push({ value, count, label: denomLabels[value] })
+          mainBudget -= count * value
+        }
+      }
+      
+      // Add leftover main budget back to remaining
+      remaining = reserveForSmall + mainBudget
+      
+      // Pass 2: Distribute remaining into smaller bills (20k down to 2k)
+      // Force diverse mix by capping max count per denom in this pass? 
+      // Simplified: Just run greedy on the small pool, but excluding 100k/50k
+      const smallDenoms = denomValues.filter(d => d <= 20000)
+      for (const value of smallDenoms) {
+        const count = Math.floor(remaining / value)
+        if (count > 0) {
+          // Merge with existing if any
+          const existing = result.find(d => d.value === value)
+          if (existing) existing.count += count
+          else result.push({ value, count, label: denomLabels[value] })
+          
+          remaining -= count * value
+        }
+      }
+    } else {
+      // "Ringkas" Mode: Standard Greedy
+      for (const value of denomValues) {
+        const count = Math.floor(remaining / value)
+        if (count > 0) {
+          result.push({ value, count, label: denomLabels[value] })
+          remaining -= count * value
+        }
       }
     }
 
-    return result
+    // Sort by value desc
+    return result.sort((a, b) => b.value - a.value)
   }
 
   function reset() {

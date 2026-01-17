@@ -24,6 +24,4 @@ export const DEFAULT_HABITS: HabitItem[] = [
   { id: 'isha', name: 'Sholat Isya', category: 'spiritual', icon: '🕌', xpReward: 10, prayerTimeKey: 'isya' },
   { id: 'quran', name: 'Baca Quran 5 Halaman', category: 'spiritual', icon: '📖', xpReward: 20 },
   { id: 'adhkar', name: 'Dzikir Pagi', category: 'spiritual', icon: '🤲', xpReward: 10 },
-  { id: 'sadaqah', name: 'Sedekah Hari Ini', category: 'community', icon: '💝', xpReward: 25 },
-  { id: 'tarawih', name: 'Sholat Tarawih', category: 'spiritual', icon: '🌙', xpReward: 20 },
 ]

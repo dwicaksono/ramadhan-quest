@@ -13,6 +13,7 @@ function getDefaultState(): GameState {
     coins: 0,
     mood: 'happy',
     userName: '',
+    avatarId: 'male_peci',
     lastActiveDate: new Date().toISOString().split('T')[0],
     streak: 0,
     showLevelUpModal: false,
@@ -20,9 +21,11 @@ function getDefaultState(): GameState {
     sadaqahTotal: 0,
     sahurStreak: 0,
     lastSahurLog: '',
+    tarawihLogs: [],
     settings: {
       soundEnabled: true,
-      hapticsEnabled: true
+      // duplicate removed
+      // hapticsEnabled removed
     },
     lastAcknowledgedLevel: 1
   }
@@ -177,10 +180,12 @@ export const useGameStore = defineStore('game', () => {
     saveToStorage()
   }
 
+  /* 
   function toggleHaptics(enabled: boolean) {
     state.value.settings.hapticsEnabled = enabled
     saveToStorage()
   }
+  */
 
   function logWater() {
     state.value.waterLog = (state.value.waterLog || 0) + 1
@@ -200,6 +205,21 @@ export const useGameStore = defineStore('game', () => {
     addEnergy(10)
     saveToStorage()
     return state.value.sadaqahTotal
+  }
+
+  function logTarawih(rakaat: number) {
+    const today = new Date().toDateString()
+    const alreadyLogged = state.value.tarawihLogs.some(log => log.date === today)
+    
+    if (alreadyLogged) return false
+    
+    // Log it
+    state.value.tarawihLogs.push({ date: today, rakaat })
+    
+    // Rewards
+    addXP(50) // Big reward for Tarawih
+    
+    return true
   }
 
   function logSahur() {
@@ -234,6 +254,13 @@ export const useGameStore = defineStore('game', () => {
     return true
   }
 
+
+
+  function setAvatar(avatarId: any) {
+    state.value.avatarId = avatarId
+    saveToStorage()
+  }
+
   return {
     // State
     state,
@@ -246,14 +273,16 @@ export const useGameStore = defineStore('game', () => {
     addEnergy,
     addCoins,
     setUserName,
+    setAvatar,
     setMood,
     checkDailyLogin,
     reset,
     closeLevelUpModal,
     toggleSound,
-    toggleHaptics,
+    // toggleHaptics,
     logWater,
     logSadaqah,
     logSahur,
+    logTarawih,
   }
 })

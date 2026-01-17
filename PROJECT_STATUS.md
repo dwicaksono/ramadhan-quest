@@ -33,16 +33,21 @@ We have successfully refined the Home Page into a **"Super App" Dashboard**, int
 
 The Home Page is polished. We now shift focus to **Core Game Loop** and **Progression** to make the app addictive.
 
-### 1. Gamification Deep Dive
-*   [x] **Leveling System:** Define XP thresholds (e.g., Level 1 -> 2 needs 100 XP).
-*   [x] **Badges/Achievements:** Visual rewards for milestones (e.g., "7 Day Streak", "Donator").
-*   [ ] **Challenge Mode:** "Khatam Quran 30 Juz" community challenge.
+### Week 5: Gamification Logic (Current)
+- [x] **Sahur Streak Logic**: `logSahur` and `SahurModal`.
+- [x] **Sedekah Tracker**: `SedekahModal` + logic.
+- [x] **Tarawih Tracker**: `TarawihModal` + logic.
+- [ ] **Challenge Mode**: Khatam Quran 30 Juz (Progress bar per Juz).
+
+### Phase 3: Deployment (Ready)
+- [x] **PWA Assets**: Verified `manifest.webmanifest` and icons.
+- [x] **Production Build**: `dist/` folder generated successfully.
+- [ ] **Deploy**: Ready for Vercel/Netlify.
 
 ### 2. Social & Backend (Deferred - Phase 2)
 *   [ ] **Leaderboard:** Requires backend server (Postponed for Offline-First focus).
 *   [ ] **Cloud Sync:** Backup game data.
 
-### 3. Content Expansion
 *   [ ] **More Habits:** Expand library for "Ramadhan" specific habits (Tarawih, Sedekah).
 *   [x] **Quran Reading Tracker:** Simple counter for Juz/Halaman read.
 

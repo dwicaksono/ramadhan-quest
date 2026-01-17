@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Tumis Sarden Pedas Kilat",
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Tumis",
+    "imageUrl": "https://www.seriouseats.com/thmb/QmcRmvZWkTp28o5be2FFECYThiw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/20250909-CannedSardineUses-AmandaSuarez-50320a1dcc9246949b2b48535de32dfb.jpg",
     "category": "sahur",
     "time": 10,
     "difficulty": "Easy",
@@ -82,7 +82,7 @@
       "Tuang telur, masak dengan api sedang hingga mengembang dan pinggirannya krispi.",
       "Balik telur, masak hingga matang sempurna, angkat dan tiriskan."
     ],
-    "imageUrl": "https://placehold.co/600x400/purple/white?text=Telur"
+    "imageUrl": "https://loremflickr.com/600/800/omelette,spicy"
   },
   {
     "id": 3,
@@ -122,7 +122,7 @@
       "Tuang saus tiram dan sedikit air, aduk cepat.",
       "Masak 2 menit saja sampai layu, angkat."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Cah"
+    "imageUrl": "https://loremflickr.com/600/800/spinach,stirfry"
   },
   {
     "id": 4,
@@ -162,7 +162,7 @@
       "Jika pakai telur, masukkan di pinggir wajan dan orak-arik campur dengan kornet.",
       "Beri sedikit lada bubuk, sajikan."
     ],
-    "imageUrl": "https://placehold.co/600x400/orange/white?text=Kornet"
+    "imageUrl": "https://cdn.hellosehat.com/wp-content/uploads/2018/06/resep-omelet.jpg?w=1920&q=100"
   },
   {
     "id": 5,
@@ -202,7 +202,7 @@
       "Panaskan sedikit minyak di teflon.",
       "Goreng adonan hingga kecokelatan di kedua sisi."
     ],
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Martabak"
+    "imageUrl": "https://image.idntimes.com/post/20220411/martabak-telur-cara-membuat-martabak-telur-mini-gorengan-enak-buka-puasa-martabak-telur-9cde86371d7fc78c91ae80a6ffab250e-4717f9f4c60baecf17941b4ca9382d44.jpg"
   },
   {
     "id": 6,
@@ -242,7 +242,7 @@
       "Masukkan buncis, aduk rata dengan telur.",
       "Tambahkan kaldu jamur dan sedikit air, masak sampai buncis empuk tapi masih renyah."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Orak"
+    "imageUrl": "https://cdn.hellosehat.com/wp-content/uploads/2018/06/resep-omelet.jpg?w=1920&q=100"
   },
   {
     "id": 7,
@@ -281,7 +281,7 @@
       "Tambahkan saus tomat, saus sambal, dan sedikit air.",
       "Masak hingga kuah mengental dan membalut sosis."
     ],
-    "imageUrl": "https://placehold.co/600x400/purple/white?text=Sosis"
+    "imageUrl": "https://loremflickr.com/600/800/sausage,tomatosauce"
   },
   {
     "id": 8,
@@ -315,7 +315,7 @@
       "Goreng dalam minyak panas hingga berkulit atau kecokelatan.",
       "Angkat dan sajikan dengan kecap manis pedas."
     ],
-    "imageUrl": "https://placehold.co/600x400/red/white?text=Tahu"
+    "imageUrl": "https://loremflickr.com/600/800/friedtofu"
   },
   {
     "id": 9,
@@ -355,7 +355,7 @@
       "Masukkan tauge dan saus tiram, aduk cepat.",
       "Terakhir masukkan ikan asin goreng dan daun bawang, aduk sebentar, angkat."
     ],
-    "imageUrl": "https://placehold.co/600x400/red/white?text=Tumis"
+    "imageUrl": "https://image.idntimes.com/post/20220411/martabak-telur-cara-membuat-martabak-telur-mini-gorengan-enak-buka-puasa-martabak-telur-9cde86371d7fc78c91ae80a6ffab250e-4717f9f4c60baecf17941b4ca9382d44.jpg"
   },
   {
     "id": 10,
@@ -394,7 +394,7 @@
       "Tuang kecap manis dan sedikit air, masak sampai mendidih.",
       "Masukkan telur ceplok, masak sebentar agar bumbu meresap."
     ],
-    "imageUrl": "https://placehold.co/600x400/purple/white?text=Telur"
+    "imageUrl": "https://loremflickr.com/600/800/friedegg,soysauce"
   },
   {
     "id": 11,
@@ -434,7 +434,7 @@
       "Tuang larutan maizena sampai kuah mengental.",
       "Tuang telur kocok sedikit demi sedikit sambil diaduk memutar (serabut). Beri minyak wijen."
     ],
-    "imageUrl": "https://placehold.co/600x400/orange/white?text=Sup"
+    "imageUrl": "https://asset.kompas.com/crops/qrTjgZmQ2F8jrZIaFbjS4mQu3Rg=/30x22:998x667/1200x800/data/photo/2023/12/20/6582c2c84f1fa.jpg"
   },
   {
     "id": 12,
@@ -474,7 +474,7 @@
       "Tambahkan sedikit kecap manis (sedikit saja biar warna tetap pucat) dan garam.",
       "Masukkan teri goreng, aduk rata sampai nasi berasap."
     ],
-    "imageUrl": "https://placehold.co/600x400/purple/white?text=Nasi"
+    "imageUrl": "https://loremflickr.com/600/800/friedrice,anchovy"
   },
   {
     "id": 13,
@@ -514,7 +514,7 @@
       "Masukkan batang sawi putih (bagian keras) dulu, beri air sedikit.",
       "Masukkan daun sawi dan minyak ikan, masak sampai layu."
     ],
-    "imageUrl": "https://placehold.co/600x400/orange/white?text=Ca"
+    "imageUrl": "https://asset.kompas.com/crops/1TLAkOXq5UZn8mqdxafSrS6bXXM=/3x0:700x465/1200x800/data/photo/2021/02/02/6018c7164b1bc.jpg"
   },
   {
     "id": 14,
@@ -553,7 +553,7 @@
       "Masukkan tempe, kecap manis, gula merah, dan sedikit air.",
       "Masak hingga air menyusut dan bumbu meresap."
     ],
-    "imageUrl": "https://placehold.co/600x400/red/white?text=Tempe"
+    "imageUrl": "https://media.zcreators.id/crop/0x0:0x0/x/photo/indizone/2021/09/02/vWsZlaA/lezatnya-tempe-orek-yang-bisa-kita-buat-pagi-ini71.jpg"
   },
   {
     "id": 15,
@@ -592,7 +592,7 @@
       "Panaskan margarin, masukkan telur, buat orak-arik lembut (creamy).",
       "Sajikan di piring, taburi abon sapi di atasnya."
     ],
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Abon"
+    "imageUrl": "https://assets.pikiran-rakyat.com/crop/0x0:0x0/720x0/webp/photo/2022/03/22/510541684.jpg"
   },
   {
     "id": 16,
@@ -632,7 +632,7 @@
       "Masukkan bayam, tambahkan gula dan garam.",
       "Matikan api segera setelah bayam layu agar tetap hijau."
     ],
-    "imageUrl": "https://placehold.co/600x400/red/white?text=Sayur"
+    "imageUrl": "https://asset.kompas.com/crops/Hr52DtnmZS3TCxhLXco-CSZm2CM=/54x87:854x621/1200x800/data/photo/2022/05/05/62735bb98c0a0.jpg"
   },
   {
     "id": 17,
@@ -672,7 +672,7 @@
       "Siram sambal dengan minyak panas bekas goreng nugget.",
       "Penyet/geprek nugget di atas sambal."
     ],
-    "imageUrl": "https://placehold.co/600x400/red/white?text=Nugget"
+    "imageUrl": "https://img-global.cpcdn.com/steps/7e97666f56a8f129/400x400cq80/photo.jpg"
   },
   {
     "id": 18,
@@ -712,7 +712,7 @@
       "Beri kaldu bubuk dan sedikit lada.",
       "Masak cepat dengan api besar."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Tumis"
+    "imageUrl": "https://loremflickr.com/600/800/oystermushrooms"
   },
   {
     "id": 19,
@@ -752,7 +752,7 @@
       "Masukkan sisa sayuran dan saus tiram.",
       "Kentalkan kuah dengan sedikit larutan maizena jika suka."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Capcay"
+    "imageUrl": "https://loremflickr.com/600/800/capcay,vegetables"
   },
   {
     "id": 20,
@@ -792,7 +792,7 @@
       "Bumbui dengan kecap asin, garam, lada, dan penyedap.",
       "Aduk rata, tambahkan seledri jika ada."
     ],
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Bihun"
+    "imageUrl": "https://www.miburungdara.com/mbdw3b/wp-content/uploads/2025/04/bihun-goreng-black-pepper.jpg"
   },
   {
     "id": 21,
@@ -827,7 +827,7 @@
       "Tuang sambal terasi di cobek atau piring.",
       "Penyet telur di atas sambal."
     ],
-    "imageUrl": "https://placehold.co/600x400/blue/white?text=Telur"
+    "imageUrl": "https://loremflickr.com/600/800/boiledegg,chili"
   },
   {
     "id": 22,
@@ -867,7 +867,7 @@
       "Tuang telur kocok perlahan sambil diaduk.",
       "Beri garam, lada, daun bawang, dan minyak wijen."
     ],
-    "imageUrl": "https://placehold.co/600x400/orange/white?text=Sup"
+    "imageUrl": "https://loremflickr.com/600/800/tomatoeggsoup"
   },
   {
     "id": 23,
@@ -906,7 +906,7 @@
       "Masukkan labu siam dan cabai.",
       "Masak dengan sedikit air sampai matang."
     ],
-    "imageUrl": "https://placehold.co/600x400/orange/white?text=Tumis"
+    "imageUrl": "https://loremflickr.com/600/800/soup"
   },
   {
     "id": 24,
@@ -939,7 +939,7 @@
       "Panaskan minyak, goreng ayam hingga kecokelatan.",
       "Angkat dan sajikan dengan sambal botolan."
     ],
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Ayam"
+    "imageUrl": "https://loremflickr.com/600/800/friedchicken"
   },
   {
     "id": 25,
@@ -978,7 +978,7 @@
       "Tumis bawang putih cincang hingga keemasan dan krispi.",
       "Siram minyak bawang dan saus tiram di atas rebusan pakcoy."
     ],
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Tumis"
+    "imageUrl": "https://loremflickr.com/600/800/bokchoy,garlic"
   },
   {
     "id": 26,
@@ -1018,7 +1018,7 @@
       "Lipat sisi telur yang berlebih ke dalam roti.",
       "Beri keju dan saus, lipat roti jadi satu (sandwich), panggang sebentar."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Sandwich"
+    "imageUrl": "https://loremflickr.com/600/800/eggsandwich"
   },
   {
     "id": 27,
@@ -1059,7 +1059,7 @@
       "Beri sedikit air, kecap manis, saus sambal, lada, dan garam.",
       "Masak hingga kuah nyemek (sedikit), sajikan di atas nasi hangat."
     ],
-    "imageUrl": "https://placehold.co/600x400/orange/white?text=Nasi"
+    "imageUrl": "https://loremflickr.com/600/800/stirfry,sausage,rice"
   },
   {
     "id": 28,
@@ -1093,7 +1093,7 @@
       "Goreng otak-otak hingga mengembang dan kecokelatan.",
       "Angkat, sajikan dengan cocolan saus favorit."
     ],
-    "imageUrl": "https://placehold.co/600x400/purple/white?text=Otak-otak"
+    "imageUrl": "https://loremflickr.com/600/800/fishcake,fried"
   },
   {
     "id": 29,
@@ -1133,7 +1133,7 @@
       "Masak hingga mendidih kembali dan sosis matang.",
       "Taburi daun seledri, sajikan."
     ],
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Sop"
+    "imageUrl": "https://loremflickr.com/600/800/vegetablesoup,sausage"
   },
   {
     "id": 30,
@@ -1172,7 +1172,7 @@
       "Masukkan cumi dan tomat hijau.",
       "Masak sebentar, beri gula pasir (hati-hati garam karena cumi sudah asin)."
     ],
-    "imageUrl": "https://placehold.co/600x400/purple/white?text=Cumi"
+    "imageUrl": "https://loremflickr.com/600/800/squid,greenchili"
   },
   {
     "id": 31,
@@ -1212,7 +1212,7 @@
       "Aduk sampai berbusa, masukkan tahu goreng.",
       "Aduk cepat sampai tahu terbalut rata."
     ],
-    "imageUrl": "https://placehold.co/600x400/purple/white?text=Tahu"
+    "imageUrl": "https://loremflickr.com/600/800/crispytofu"
   },
   {
     "id": 32,
@@ -1252,7 +1252,7 @@
       "Setelah oyong empuk, masukkan soun.",
       "Beri garam, lada, dan penyedap rasa."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Tumis"
+    "imageUrl": "https://loremflickr.com/600/800/luffa,vermicelli"
   },
   {
     "id": 33,
@@ -1292,7 +1292,7 @@
       "Tata sayuran di piring, siram bumbu pecel.",
       "Sajikan dengan telur ceplok atau tempe goreng."
     ],
-    "imageUrl": "https://placehold.co/600x400/red/white?text=Pecel"
+    "imageUrl": "https://loremflickr.com/600/800/vegetablesalad,peanut"
   },
   {
     "id": 34,
@@ -1331,7 +1331,7 @@
       "Masukkan kaldu bubuk, aduk rata.",
       "Taburi ayam suwir, kecap asin, lada, dan bawang goreng."
     ],
-    "imageUrl": "https://placehold.co/600x400/red/white?text=Oatmeal"
+    "imageUrl": "https://loremflickr.com/600/800/oatmeal,savory"
   },
   {
     "id": 35,
@@ -1371,7 +1371,7 @@
       "Masukkan brokoli dan sedikit air, tutup wajan sebentar (steam).",
       "Masukkan saus tiram dan larutan maizena, masak hingga kuah mengental."
     ],
-    "imageUrl": "https://placehold.co/600x400/red/white?text=Tumis"
+    "imageUrl": "https://loremflickr.com/600/800/broccoli,garlic"
   },
   {
     "id": 36,
@@ -1411,7 +1411,7 @@
       "Masukkan kembali telur, tambah saus tomat, gula, dan garam.",
       "Aduk rata, taburi daun bawang."
     ],
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Telur"
+    "imageUrl": "https://loremflickr.com/600/800/tomato,egg"
   },
   {
     "id": 37,
@@ -1455,7 +1455,7 @@
       "Siram dengan sedikit air hangat, koreksi rasa (manis asam pedas).",
       "Potong-potong tahu, siram dengan kuah gejrot."
     ],
-    "imageUrl": "https://placehold.co/600x400/red/white?text=Tahu"
+    "imageUrl": "https://loremflickr.com/600/800/tofu,tamarind"
   },
   {
     "id": 38,
@@ -1495,7 +1495,7 @@
       "Masukkan kulit melinjo, beri sedikit air agar matang empuk.",
       "Masukkan teri goreng, gula, dan garam. Aduk rata."
     ],
-    "imageUrl": "https://placehold.co/600x400/blue/white?text=Tumis"
+    "imageUrl": "https://loremflickr.com/600/800/redvegetables,stirfry"
   },
   {
     "id": 39,
@@ -1535,7 +1535,7 @@
       "Tumis bumbu balado dan daun jeruk dengan sedikit minyak sampai matang.",
       "Matikan api, tunggu bumbu agak dingin, baru campur teri dan kacang (agar tetap renyah)."
     ],
-    "imageUrl": "https://placehold.co/600x400/purple/white?text=Teri"
+    "imageUrl": "https://loremflickr.com/600/800/anchovy,peanuts,chili"
   },
   {
     "id": 40,
@@ -1574,7 +1574,7 @@
       "Masak dengan api sedang sampai warna telur cokelat gelap.",
       "Angkat (lebih enak jika didiamkan semalaman)."
     ],
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Telur"
+    "imageUrl": "https://loremflickr.com/600/800/teaegg"
   },
   {
     "id": 41,
@@ -1619,7 +1619,7 @@
       "Siram campuran bumbu dengan minyak kelapa panas, aduk rata (bejek).",
       "Campurkan sambal matah ke ayam suwir."
     ],
-    "imageUrl": "https://placehold.co/600x400/orange/white?text=Ayam"
+    "imageUrl": "https://loremflickr.com/600/800/shreddedchicken,chili"
   },
   {
     "id": 42,
@@ -1653,7 +1653,7 @@
       "Masukkan bumbu racik.",
       "Masukkan sisa sayuran (daun-daunan), masak sebentar sampai layu."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Sayur"
+    "imageUrl": "https://loremflickr.com/600/800/tamarindsoup,vegetables"
   },
   {
     "id": 43,
@@ -1693,7 +1693,7 @@
       "Masukkan buncis, beri saus tiram dan sedikit air.",
       "Masak sampai buncis matang dan air menyusut."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Tumis"
+    "imageUrl": "https://loremflickr.com/600/800/greenbeans,mincedmeat"
   },
   {
     "id": 44,
@@ -1733,7 +1733,7 @@
       "Celup ke telur kocok, gulingkan di tepung panir.",
       "Goreng sebentar di minyak panas."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Roti"
+    "imageUrl": "https://loremflickr.com/600/800/friedbread,chocolate"
   },
   {
     "id": 45,
@@ -1772,7 +1772,7 @@
       "Setelah wortel empuk, masukkan makaroni dan bumbu sop.",
       "Masak sebentar, taburi daun bawang dan seledri."
     ],
-    "imageUrl": "https://placehold.co/600x400/green/white?text=Sop"
+    "imageUrl": "https://loremflickr.com/600/800/macaronisoup"
   },
   {
     "id": 46,
@@ -1811,7 +1811,7 @@
       "Goreng di minyak panas sebentar saja (jangan sampai terlalu kering/crispy).",
       "Angkat selagi masih agak lembek (ciri khas mendoan)."
     ],
-    "imageUrl": "https://placehold.co/600x400/orange/white?text=Tempe"
+    "imageUrl": "https://loremflickr.com/600/800/batteredtempeh"
   },
   {
     "id": 47,
@@ -1850,7 +1850,7 @@
       "Masukkan terong goreng, tambahkan kecap manis dan sedikit air.",
       "Aduk rata sampai bumbu meresap."
     ],
-    "imageUrl": "https://placehold.co/600x400/blue/white?text=Tumis"
+    "imageUrl": "https://loremflickr.com/600/800/eggplant,soysauce"
   },
   {
     "id": 48,
@@ -1889,7 +1889,7 @@
       "Bentuk bulat-bulat dengan bantuan dua sendok.",
       "Goreng dalam minyak panas hingga kuning keemasan."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Bola-Bola"
+    "imageUrl": "https://loremflickr.com/600/800/tofuballs,noodles"
   },
   {
     "id": 49,
@@ -1929,7 +1929,7 @@
       "Masukkan timun, gula, garam, dan cuka.",
       "Masak sebentar agar sayuran tetap renyah."
     ],
-    "imageUrl": "https://placehold.co/600x400/orange/white?text=Acar"
+    "imageUrl": "https://loremflickr.com/600/800/yellowpickle,cucumber"
   },
   {
     "id": 50,
@@ -1959,6 +1959,6 @@
       "Taburkan kering kentang mustofa di atasnya.",
       "Siap disantap (bisa tambah telur ceplok jika sempat)."
     ],
-    "imageUrl": "https://placehold.co/600x400/yellow/white?text=Kering"
+    "imageUrl": "https://loremflickr.com/600/800/potatosticks,spicy"
   }
 ]

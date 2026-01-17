@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 import { useRecipeStore } from '@/stores/recipe'
 import { useGame } from '@/composables/useGame'
-import { BaseCard } from '@/components/base'
+
 import RecipeDetail from '@/components/kitchen/RecipeDetail.vue'
 import type { Recipe } from '@/types/recipe'
 import { useAudio } from '@/composables/useAudio'
@@ -83,45 +83,60 @@ function handleFinishCooking() {
       </button>
     </div>
 
-    <!-- Recipe Grid -->
-    <div v-if="recipes.length > 0" class="grid grid-cols-2 gap-4 pb-24">
-      <BaseCard
+    <!-- Recipe Grid (Modern Masonry-ish Grid) -->
+    <div v-if="recipes.length > 0" class="grid grid-cols-2 gap-3 pb-24">
+      <div
         v-for="recipe in recipes"
         :key="recipe.id"
-        class="!p-0 overflow-hidden cursor-pointer hover:shadow-lg transition-all active:scale-95 group relative dark:bg-secondary-800 dark:border-secondary-700"
+        class="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 active:scale-95"
         @click="openRecipe(recipe)"
       >
-        <!-- Image Cover -->
-        <div class="aspect-square relative">
-          <img 
-            :src="recipe.imageUrl" 
-            :alt="recipe.name"
-            class="w-full h-full object-cover"
-            loading="lazy"
-          >
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          
-          <!-- Difficulty Badge -->
-          <span class="absolute top-2 right-2 text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/90 dark:bg-black/60 text-stone-700 dark:text-white shadow-sm backdrop-blur-sm">
+        <!-- Full Background Image -->
+        <img 
+          :src="recipe.imageUrl" 
+          :alt="recipe.name"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+        >
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+
+        <!-- Top Badge (Difficulty) -->
+        <div class="absolute top-2 right-2">
+          <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white bg-white/20 backdrop-blur-md border border-white/10 rounded-lg shadow-sm">
             {{ recipe.difficulty }}
           </span>
         </div>
 
-        <!-- Content -->
-        <div class="p-3">
-          <h3 class="font-bold text-sm text-secondary-900 dark:text-white leading-tight line-clamp-2 mb-1">
-            {{ recipe.name }}
-          </h3>
-          <div class="flex items-center gap-2 text-xs text-secondary-500 dark:text-secondary-400">
-            <span class="flex items-center gap-1">
-              ⏲️ {{ recipe.time }}m
-            </span>
-            <span v-if="recipe.tags[0]" class="text-primary-600 dark:text-primary-400 font-medium">
+        <!-- Bottom Content -->
+        <div class="absolute bottom-0 left-0 w-full p-3 transform transition-transform duration-300 group-hover:translate-y-[-4px]">
+          <!-- Tags -->
+          <div v-if="recipe.tags[0]" class="mb-1">
+            <span class="text-[10px] font-medium text-emerald-300 bg-emerald-500/20 px-1.5 py-0.5 rounded-md backdrop-blur-sm">
               #{{ recipe.tags[0] }}
             </span>
           </div>
+
+          <!-- Title -->
+          <h3 class="text-white font-bold text-sm leading-tight line-clamp-2 mb-1 drop-shadow-sm">
+            {{ recipe.name }}
+          </h3>
+
+          <!-- Meta (Time) -->
+          <div class="flex items-center gap-2 text-[10px] text-gray-300 font-medium">
+            <div class="flex items-center gap-1 bg-black/30 px-1.5 py-0.5 rounded-full backdrop-blur-sm">
+              <span>⏱️</span>
+              <span>{{ recipe.time }}m</span>
+            </div>
+            <!-- Cook Energy Indicator -->
+             <div class="flex items-center gap-1 bg-yellow-500/20 text-yellow-300 px-1.5 py-0.5 rounded-full backdrop-blur-sm border border-yellow-500/20">
+              <span>⚡</span>
+              <span>+30</span>
+            </div>
+          </div>
         </div>
-      </BaseCard>
+      </div>
     </div>
 
     <!-- Empty State -->
