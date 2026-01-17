@@ -7,13 +7,12 @@ import HabitItem from '@/components/habits/HabitItem.vue'
 import { BaseCard, BaseButton } from '@/components/base'
 import { toast } from 'vue-sonner'
 import { useAudio } from '@/composables/useAudio'
-import { useHaptics } from '@/composables/useHaptics'
 
 const router = useRouter()
 const habitStore = useHabitStore()
 const { toggleHabit: toggleHabitAction } = useHabitActions()
 const { playSfx } = useAudio()
-const { trigger } = useHaptics()
+
 
 const isLoading = ref(true)
 const displayedHabits = computed(() => habitStore.todaysHabits.slice(0, 3))
@@ -37,12 +36,12 @@ function handleToggle(habitId: string) {
 
   if (result.isCompleted) {
     playSfx('success')
-    trigger('medium')
+
     if (result.xpEarned > 0) {
       toast.success(`+${result.xpEarned} XP!`)
     }
   } else {
-    trigger('light')
+
   }
 }
 

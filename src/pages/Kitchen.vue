@@ -2,16 +2,15 @@
 import { ref, computed } from 'vue'
 import { useRecipeStore } from '@/stores/recipe'
 import { useGame } from '@/composables/useGame'
-
 import RecipeDetail from '@/components/kitchen/RecipeDetail.vue'
 import type { Recipe } from '@/types/recipe'
 import { useAudio } from '@/composables/useAudio'
-import { useHaptics } from '@/composables/useHaptics'
+
 
 const recipeStore = useRecipeStore()
 const { completeCooking } = useGame()
 const { playSfx } = useAudio()
-const { trigger } = useHaptics()
+
 
 const recipes = computed(() => recipeStore.filteredRecipes)
 const filters = computed(() => recipeStore.filters)
@@ -36,7 +35,7 @@ function handleFinishCooking() {
   const result = completeCooking()
   if (result) {
     playSfx('action_cook')
-    trigger('medium')
+
   }
   closeRecipe()
 }
