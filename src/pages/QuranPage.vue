@@ -4,12 +4,12 @@ import { useQuranStore } from '@/stores/quran'
 import { BaseProgress, BaseHeader } from '@/components/base'
 import { toast } from 'vue-sonner'
 import { useAudio } from '@/composables/useAudio'
-import { useHaptics } from '@/composables/useHaptics'
+
 
 
 const quranStore = useQuranStore()
 const { playSfx } = useAudio()
-const { trigger } = useHaptics()
+
 
 // Generate 1-30 array
 const juzList = Array.from({ length: 30 }, (_, i) => i + 1)
@@ -19,10 +19,10 @@ function handleJuzClick(juzId: number) {
   
   if (result.completed) {
     playSfx('success')
-    trigger('medium')
+
     toast.success(`Alhamdulillah! Juz ${juzId} selesai. +${result.xpEarned} XP`)
   } else {
-    trigger('light')
+
   }
 }
 </script>

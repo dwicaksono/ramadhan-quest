@@ -6,14 +6,14 @@ import HabitList from '@/components/habits/HabitList.vue'
 import { BaseHeader } from '@/components/base'
 import { useTransition, TransitionPresets } from '@vueuse/core'
 import { useAudio } from '@/composables/useAudio'
-import { useHaptics } from '@/composables/useHaptics'
+
 
 import { toast } from 'vue-sonner'
 
 const habitStore = useHabitStore()
 const { toggleHabit } = useHabitActions()
 const { playSfx } = useAudio()
-const { trigger } = useHaptics()
+
 
 // Tab Management
 type Tab = 'spiritual' | 'community' | 'personal' | 'all'
@@ -53,10 +53,10 @@ function handleToggle(id: string, event: MouseEvent) {
     triggerXpAnimation(result.xpEarned, event.clientX, event.clientY)
     // Play full success feedback
     playSfx('success')
-    trigger('medium')
+
   } else {
     // Light feedback for unchecking
-    trigger('light')
+
   }
 }
 

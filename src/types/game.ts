@@ -1,6 +1,9 @@
 // Character mood states
 export type CharacterMood = 'happy' | 'neutral' | 'sad' | 'tired' | 'excited'
 
+// Avatar types
+export type AvatarId = 'female_hijab' | 'male_peci' | 'male_modern' | 'male_young'
+
 // Game state interface
 export interface GameState {
   xp: number
@@ -9,6 +12,7 @@ export interface GameState {
   coins: number
   mood: CharacterMood
   userName: string
+  avatarId: AvatarId
   lastActiveDate: string
   streak: number
   showLevelUpModal?: boolean
@@ -17,11 +21,12 @@ export interface GameState {
   startedAt?: string // Date when user starter playing
   waterLog: number // Daily water glasses drunk
   sadaqahTotal: number
-  sahurStreak?: number
-  lastSahurLog?: string // Date YYYY-MM-DD
+  sahurStreak: number
+  lastSahurLog: string // Date YYYY-MM-DD
+  tarawihLogs: Array<{ date: string; rakaat: number }>
   settings: {
     soundEnabled: boolean
-    hapticsEnabled: boolean
+    // hapticsEnabled removed
   }
 }
 

@@ -9,11 +9,13 @@ import { useNow } from '@vueuse/core'
 import { ref } from 'vue'
 import PrayerGuideModal from '@/components/home/PrayerGuideModal.vue'
 import SedekahModal from '@/components/home/SedekahModal.vue'
+import TarawihModal from '@/components/game/TarawihModal.vue'
 
 const gameStore = useGameStore()
 const { playSfx } = useAudio()
 const showPrayerGuide = ref(false)
 const showSedekah = ref(false)
+const showTarawih = ref(false)
 const { times } = usePrayerTimes()
 const now = useNow()
 
@@ -48,42 +50,42 @@ function handleLogWater() {
 </script>
 
 <template>
-  <div class="flex gap-3">
+  <div class="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
     <BaseButton
       variant="secondary"
       size="sm"
-      class="flex-1 group relative overflow-hidden"
+      class="flex-shrink-0 group relative overflow-hidden h-10 whitespace-nowrap"
       :class="{ 'opacity-75': isFasting }"
       @click="handleLogWater"
     >
       <!-- Icon changes based on state -->
-      <svg v-if="isFasting" class="w-4 h-4 mr-1 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg v-if="isFasting" class="w-4 h-4 mr-2 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
       </svg>
-      <svg v-else class="w-4 h-4 mr-1 text-sky-500 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg v-else class="w-4 h-4 mr-2 text-sky-500 group-hover:scale-110 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12l-8-8-8 8m16 0A8 8 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8z" />
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" opacity="0.5"/>
       </svg>
       
-      <span v-if="isFasting">Sedang Puasa</span>
-      <span v-else>Log Water ({{ gameStore.state.waterLog || 0 }}/8)</span>
+      <span v-if="isFasting" class="text-xs font-semibold">Sedang Puasa</span>
+      <span v-else class="text-xs">Log Water ({{ gameStore.state.waterLog || 0 }}/8)</span>
     </BaseButton>
 
     <BaseButton
       variant="secondary"
       size="sm"
-      class="flex-1 group"
+      class="flex-shrink-0 group h-10 whitespace-nowrap"
       @click="showPrayerGuide = true"
     >
-      <svg class="w-4 h-4 mr-1 text-primary-500 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-4 h-4 mr-2 text-primary-500 group-hover:scale-110 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
       </svg>
-      Prayer Guide
+      <span class="text-xs">Prayer Guide</span>
     </BaseButton>
 
     <!-- FAB Button (Sedekah) -->
     <button 
-      class="w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary-600 transition-colors group relative"
+      class="w-10 h-10 flex-shrink-0 bg-primary-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary-600 transition-colors group relative"
       @click="showSedekah = true"
       aria-label="Catat Sedekah"
     >
@@ -93,7 +95,19 @@ function handleLogWater() {
       <!-- Optional: Badge/Indicator if user hasn't done sedekah today (future) -->
     </button>
 
+    <!-- FAB Button (Tarawih) -->
+    <button 
+      class="w-10 h-10 flex-shrink-0 bg-indigo-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-indigo-600 transition-colors group relative"
+      @click="showTarawih = true"
+      aria-label="Catat Tarawih"
+    >
+      <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+    </button>
+
     <PrayerGuideModal v-model="showPrayerGuide" />
     <SedekahModal v-model="showSedekah" />
+    <TarawihModal v-model="showTarawih" />
   </div>
 </template>

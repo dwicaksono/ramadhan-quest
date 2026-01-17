@@ -3,19 +3,19 @@ import { useGameStore } from '@/stores/game'
 import { BaseCard, BaseButton } from '@/components/base'
 import confetti from 'canvas-confetti'
 import { useAudio } from '@/composables/useAudio'
-import { useHaptics } from '@/composables/useHaptics'
+
 import { watch } from 'vue'
 
 const gameStore = useGameStore()
 const { playSfx } = useAudio()
-const { trigger } = useHaptics()
+
 
 // Trigger confetti when modal opens
 watch(() => gameStore.state.showLevelUpModal, (newVal) => {
   if (newVal) {
     fireConfetti()
     playSfx('levelup')
-    trigger('heavy')
+
   }
 })
 
