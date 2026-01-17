@@ -100,7 +100,7 @@ function openTraktir() {
         <span class="mr-2">🗑️</span> Reset Semua Data
       </BaseButton>
       <p class="text-center text-[10px] text-secondary-400 mt-2 opacity-60">
-        Versi 1.0.0 (Alpha) • Made with ❤️ by MuslimDev
+        Versi 1.0.0 (Alpha)
       </p>
     </div>
   </div>

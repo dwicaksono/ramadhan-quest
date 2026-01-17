@@ -111,5 +111,3 @@ If you enjoy using Ramadhan Quest, confirm us a coffee (or Tajkil)!
 </a>
 
 ---
-
-Made with ❤️ by **MuslimDev** | Ramadhan 1446H
