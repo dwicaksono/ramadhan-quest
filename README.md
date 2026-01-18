@@ -5,6 +5,10 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![Pinia](https://img.shields.io/badge/Pinia-FFE46B?style=for-the-badge&logo=pinia)](https://pinia.vuejs.org/)
 
+<div align="center">
+  <img src="./screenshots/demo.gif" alt="Ramadhan Quest App Demo" width="300" />
+</div>
+
 **Ramadhan Quest** is a gamified Progressive Web App (PWA) designed to make your Ramadhan worship more engaging, consistent, and fun. Track your daily habits, manage your budget, unlock recipes, and earn achievements—all in one beautiful app.
 
 ---
